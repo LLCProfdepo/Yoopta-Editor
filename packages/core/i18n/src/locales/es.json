@@ -1,0 +1,153 @@
+{
+  "editor": {
+    "blockOptions": {
+      "delete": "Eliminar",
+      "duplicate": "Duplicar",
+      "turnInto": "Convertir en",
+      "copyBlockLink": "Copiar enlace del bloque",
+      "moveUp": "Mover arriba",
+      "moveDown": "Mover abajo"
+    },
+    "placeholder": "Escribe '/' para comandos",
+    "shortcuts": {
+      "bold": "Negrita",
+      "italic": "Cursiva",
+      "underline": "Subrayado",
+      "strike": "Tachado",
+      "code": "Código"
+    }
+  },
+  "plugins": {
+    "Paragraph": {
+      "display": {
+        "title": "Párrafo",
+        "description": "Simplemente comienza a escribir texto"
+      }
+    },
+    "HeadingOne": {
+      "display": {
+        "title": "Encabezado 1",
+        "description": "Encabezado de sección grande"
+      }
+    },
+    "HeadingTwo": {
+      "display": {
+        "title": "Encabezado 2",
+        "description": "Encabezado de sección mediano"
+      }
+    },
+    "HeadingThree": {
+      "display": {
+        "title": "Encabezado 3",
+        "description": "Encabezado de sección pequeño"
+      }
+    },
+    "Blockquote": {
+      "display": {
+        "title": "Cita",
+        "description": "Capturar una cita"
+      }
+    },
+    "Code": {
+      "display": {
+        "title": "Código",
+        "description": "Capturar un fragmento de código"
+      }
+    },
+    "NumberedList": {
+      "display": {
+        "title": "Lista Numerada",
+        "description": "Crear una lista con numeración"
+      }
+    },
+    "BulletedList": {
+      "display": {
+        "title": "Lista con Viñetas",
+        "description": "Crear una lista simple con viñetas"
+      }
+    },
+    "TodoList": {
+      "display": {
+        "title": "Lista de Tareas",
+        "description": "Seguir tareas con una lista de tareas"
+      }
+    },
+    "Table": {
+      "display": {
+        "title": "Tabla",
+        "description": "Insertar una tabla"
+      }
+    },
+    "Image": {
+      "display": {
+        "title": "Imagen",
+        "description": "Subir o incrustar con un enlace"
+      }
+    },
+    "Video": {
+      "display": {
+        "title": "Video",
+        "description": "Incrustar un video"
+      }
+    },
+    "File": {
+      "display": {
+        "title": "Archivo",
+        "description": "Subir o incrustar un archivo"
+      }
+    },
+    "Embed": {
+      "display": {
+        "title": "Incrustar",
+        "description": "Incrustar contenido de otro sitio"
+      }
+    },
+    "Divider": {
+      "display": {
+        "title": "Divisor",
+        "description": "Dividir visualmente bloques"
+      }
+    },
+    "Accordion": {
+      "display": {
+        "title": "Acordeón",
+        "description": "Crear un acordeón plegable"
+      }
+    },
+    "Callout": {
+      "display": {
+        "title": "Destacado",
+        "description": "Hacer que la escritura destaque"
+      }
+    },
+    "Link": {
+      "display": {
+        "title": "Enlace",
+        "description": "Crear un bloque de enlace"
+      }
+    }
+  },
+  "tools": {
+    "toolbar": {
+      "bold": "Negrita",
+      "italic": "Cursiva",
+      "underline": "Subrayado",
+      "strike": "Tachado",
+      "code": "Código",
+      "highlight": "Resaltar",
+      "highlightColor": {
+        "text": "Color de resaltado"
+      }
+    },
+    "linkTool": {
+      "placeholder": "Pegar o escribir un enlace",
+      "edit": "Editar enlace",
+      "unlink": "Quitar enlace",
+      "openInNewTab": "Abrir en nueva pestaña"
+    },
+    "actionMenu": {
+      "search": "Buscar bloques...",
+      "noResults": "No se encontraron resultados"
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "editor": {
+    "blockOptions": {
+      "delete": "Удалить",
+      "duplicate": "Дублировать",
+      "turnInto": "Превратить в",
+      "copyBlockLink": "Копировать ссылку на блок",
+      "moveUp": "Переместить вверх",
+      "moveDown": "Переместить вниз"
+    },
+    "placeholder": "Введите '/' для команд",
+    "shortcuts": {
+      "bold": "Жирный",
+      "italic": "Курсив",
+      "underline": "Подчеркнутый",
+      "strike": "Зачеркнутый",
+      "code": "Код"
+    }
+  },
+  "plugins": {
+    "Paragraph": {
+      "display": {
+        "title": "Параграф",
+        "description": "Просто начните писать обычный текст"
+      }
+    },
+    "HeadingOne": {
+      "display": {
+        "title": "Заголовок 1",
+        "description": "Большой заголовок раздела"
+      }
+    },
+    "HeadingTwo": {
+      "display": {
+        "title": "Заголовок 2",
+        "description": "Средний заголовок раздела"
+      }
+    },
+    "HeadingThree": {
+      "display": {
+        "title": "Заголовок 3",
+        "description": "Малый заголовок раздела"
+      }
+    },
+    "Blockquote": {
+      "display": {
+        "title": "Цитата",
+        "description": "Добавить цитату"
+      }
+    },
+    "Code": {
+      "display": {
+        "title": "Код",
+        "description": "Добавить фрагмент кода"
+      }
+    },
+    "NumberedList": {
+      "display": {
+        "title": "Нумерованный Список",
+        "description": "Создать список с нумерацией"
+      }
+    },
+    "BulletedList": {
+      "display": {
+        "title": "Маркированный Список",
+        "description": "Создать простой маркированный список"
+      }
+    },
+    "TodoList": {
+      "display": {
+        "title": "Список Задач",
+        "description": "Отслеживайте задачи со списком задач"
+      }
+    },
+    "Table": {
+      "display": {
+        "title": "Таблица",
+        "description": "Вставить таблицу"
+      }
+    },
+    "Image": {
+      "display": {
+        "title": "Изображение",
+        "description": "Загрузить или встроить по ссылке"
+      }
+    },
+    "Video": {
+      "display": {
+        "title": "Видео",
+        "description": "Встроить видео"
+      }
+    },
+    "File": {
+      "display": {
+        "title": "Файл",
+        "description": "Загрузить или встроить файл"
+      }
+    },
+    "Embed": {
+      "display": {
+        "title": "Встроить",
+        "description": "Встроить контент с другого сайта"
+      }
+    },
+    "Divider": {
+      "display": {
+        "title": "Разделитель",
+        "description": "Визуально разделить блоки"
+      }
+    },
+    "Accordion": {
+      "display": {
+        "title": "Аккордеон",
+        "description": "Создать складной аккордеон"
+      }
+    },
+    "Callout": {
+      "display": {
+        "title": "Выделение",
+        "description": "Сделать текст заметным"
+      }
+    },
+    "Link": {
+      "display": {
+        "title": "Ссылка",
+        "description": "Создать блок ссылки"
+      }
+    }
+  },
+  "tools": {
+    "toolbar": {
+      "bold": "Жирный",
+      "italic": "Курсив",
+      "underline": "Подчеркнутый",
+      "strike": "Зачеркнутый",
+      "code": "Код",
+      "highlight": "Выделить",
+      "highlightColor": {
+        "text": "Цвет выделения"
+      }
+    },
+    "linkTool": {
+      "placeholder": "Вставьте или введите ссылку",
+      "edit": "Редактировать ссылку",
+      "unlink": "Удалить ссылку",
+      "openInNewTab": "Открыть в новой вкладке"
+    },
+    "actionMenu": {
+      "search": "Поиск блоков...",
+      "noResults": "Результаты не найдены"
+    }
+  }
+}

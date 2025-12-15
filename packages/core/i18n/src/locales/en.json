@@ -1,0 +1,153 @@
+{
+  "editor": {
+    "blockOptions": {
+      "delete": "Delete",
+      "duplicate": "Duplicate",
+      "turnInto": "Turn into",
+      "copyBlockLink": "Copy block link",
+      "moveUp": "Move up",
+      "moveDown": "Move down"
+    },
+    "placeholder": "Type '/' for commands",
+    "shortcuts": {
+      "bold": "Bold",
+      "italic": "Italic",
+      "underline": "Underline",
+      "strike": "Strikethrough",
+      "code": "Code"
+    }
+  },
+  "plugins": {
+    "Paragraph": {
+      "display": {
+        "title": "Paragraph",
+        "description": "Just start writing plain text"
+      }
+    },
+    "HeadingOne": {
+      "display": {
+        "title": "Heading 1",
+        "description": "Big section heading"
+      }
+    },
+    "HeadingTwo": {
+      "display": {
+        "title": "Heading 2",
+        "description": "Medium section heading"
+      }
+    },
+    "HeadingThree": {
+      "display": {
+        "title": "Heading 3",
+        "description": "Small section heading"
+      }
+    },
+    "Blockquote": {
+      "display": {
+        "title": "Quote",
+        "description": "Capture a quote"
+      }
+    },
+    "Code": {
+      "display": {
+        "title": "Code",
+        "description": "Capture a code snippet"
+      }
+    },
+    "NumberedList": {
+      "display": {
+        "title": "Numbered List",
+        "description": "Create a list with numbering"
+      }
+    },
+    "BulletedList": {
+      "display": {
+        "title": "Bulleted List",
+        "description": "Create a simple bulleted list"
+      }
+    },
+    "TodoList": {
+      "display": {
+        "title": "To-do List",
+        "description": "Track tasks with a to-do list"
+      }
+    },
+    "Table": {
+      "display": {
+        "title": "Table",
+        "description": "Insert a table"
+      }
+    },
+    "Image": {
+      "display": {
+        "title": "Image",
+        "description": "Upload or embed with a link"
+      }
+    },
+    "Video": {
+      "display": {
+        "title": "Video",
+        "description": "Embed a video"
+      }
+    },
+    "File": {
+      "display": {
+        "title": "File",
+        "description": "Upload or embed a file"
+      }
+    },
+    "Embed": {
+      "display": {
+        "title": "Embed",
+        "description": "Embed content from another site"
+      }
+    },
+    "Divider": {
+      "display": {
+        "title": "Divider",
+        "description": "Visually divide blocks"
+      }
+    },
+    "Accordion": {
+      "display": {
+        "title": "Accordion",
+        "description": "Create a collapsible accordion"
+      }
+    },
+    "Callout": {
+      "display": {
+        "title": "Callout",
+        "description": "Make writing stand out"
+      }
+    },
+    "Link": {
+      "display": {
+        "title": "Link",
+        "description": "Create a link block"
+      }
+    }
+  },
+  "tools": {
+    "toolbar": {
+      "bold": "Bold",
+      "italic": "Italic",
+      "underline": "Underline",
+      "strike": "Strikethrough",
+      "code": "Code",
+      "highlight": "Highlight",
+      "highlightColor": {
+        "text": "Highlight color"
+      }
+    },
+    "linkTool": {
+      "placeholder": "Paste or type a link",
+      "edit": "Edit link",
+      "unlink": "Remove link",
+      "openInNewTab": "Open in new tab"
+    },
+    "actionMenu": {
+      "search": "Search blocks...",
+      "noResults": "No results found"
+    }
+  }
+}

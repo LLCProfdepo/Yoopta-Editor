@@ -1,0 +1,55 @@
+{
+  "name": "@yoopta/i18n",
+  "version": "4.10.0-llc.1",
+  "description": "Internationalization (i18n) support for Yoopta Editor",
+  "author": "LLCProfdepo",
+  "homepage": "https://github.com/LLCProfdepo/Yoopta-Editor#readme",
+  "license": "MIT",
+  "private": false,
+  "main": "dist/index.js",
+  "type": "module",
+  "module": "dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/",
+    "src/locales/*.json"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./locales/en.json": "./src/locales/en.json",
+    "./locales/es.json": "./src/locales/es.json",
+    "./locales/ru.json": "./src/locales/ru.json"
+  },
+  "peerDependencies": {
+    "@yoopta/editor": ">=4.0.0",
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2"
+  },
+  "scripts": {
+    "start": "rollup --config rollup.config.js --watch --bundleConfigAsCjs --environment NODE_ENV:development",
+    "prepublishOnly": "yarn build",
+    "build": "rollup --config rollup.config.js --bundleConfigAsCjs --environment NODE_ENV:production"
+  },
+  "keywords": [
+    "yoopta",
+    "editor",
+    "i18n",
+    "internationalization",
+    "localization",
+    "l10n",
+    "translation",
+    "multilingual",
+    "react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LLCProfdepo/Yoopta-Editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LLCProfdepo/Yoopta-Editor/issues"
+  }
+}
