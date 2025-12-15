@@ -15,12 +15,24 @@
       "underline": "Подчеркнутый",
       "strike": "Зачеркнутый",
       "code": "Код"
+    },
+    "loading": "Загрузка...",
+    "common": {
+      "update": "Обновить",
+      "delete": "Удалить",
+      "cancel": "Отмена",
+      "save": "Сохранить",
+      "alignment": "Выравнивание",
+      "open": "Открыть",
+      "download": "Скачать",
+      "add": "Добавить",
+      "replace": "Заменить"
     }
   },
   "plugins": {
     "Paragraph": {
       "display": {
-        "title": "Параграф",
+        "title": "Текст",
         "description": "Просто начните писать обычный текст"
       }
     },
@@ -51,7 +63,15 @@
     "Code": {
       "display": {
         "title": "Код",
-        "description": "Добавить фрагмент кода"
+        "description": "Напишите лучший код!"
+      },
+      "labels": {
+        "language": "Язык",
+        "theme": "Тема"
+      },
+      "actions": {
+        "copy": "Копировать",
+        "copied": "Скопировано"
       }
     },
     "NumberedList": {
@@ -69,61 +89,143 @@
     "TodoList": {
       "display": {
         "title": "Список Задач",
-        "description": "Отслеживайте задачи со списком задач"
+        "description": "Отслеживать задачи"
       }
     },
     "Table": {
       "display": {
         "title": "Таблица",
-        "description": "Вставить таблицу"
+        "description": "Вставить простую таблицу"
+      },
+      "labels": {
+        "headerRow": "Строка заголовка",
+        "headerColumn": "Столбец заголовка"
+      },
+      "actions": {
+        "insertLeft": "Вставить слева",
+        "insertRight": "Вставить справа",
+        "insertAbove": "Вставить сверху",
+        "insertBelow": "Вставить снизу",
+        "moveUp": "Переместить вверх",
+        "moveDown": "Переместить вниз",
+        "moveLeft": "Переместить влево",
+        "moveRight": "Переместить вправо",
+        "deleteRow": "Удалить строку",
+        "deleteColumn": "Удалить"
       }
     },
     "Image": {
       "display": {
         "title": "Изображение",
-        "description": "Загрузить или встроить по ссылке"
+        "description": "Загрузить с устройства или вставить по ссылке"
+      },
+      "placeholders": {
+        "click": "Нажмите, чтобы добавить изображение",
+        "paste": "Вставьте ссылку на изображение",
+        "editAlt": "Редактировать альтернативный текст"
+      },
+      "labels": {
+        "altText": "Альтернативный текст",
+        "replaceImage": "Заменить изображение"
+      },
+      "actions": {
+        "upload": "Загрузить",
+        "embedImage": "Встроить изображение",
+        "uploadImage": "Загрузить изображение",
+        "imageLink": "Ссылка на изображение"
+      },
+      "options": {
+        "fit": "Вместить",
+        "fill": "Заполнить",
+        "cover": "Покрыть"
       }
     },
     "Video": {
       "display": {
         "title": "Видео",
-        "description": "Встроить видео"
+        "description": "Загрузить с устройства, вставить с Youtube, Vimeo, DailyMotion, Loom, Wistia"
+      },
+      "placeholders": {
+        "click": "Нажмите, чтобы добавить видео",
+        "paste": "Вставьте ссылку на видео"
+      },
+      "labels": {
+        "replaceVideo": "Заменить видео",
+        "replacePoster": "Заменить постер",
+        "addPoster": "Добавить постер"
+      },
+      "actions": {
+        "upload": "Загрузить",
+        "embedVideo": "Встроить видео",
+        "uploadVideo": "Загрузить видео",
+        "videoLink": "Ссылка на видео"
+      },
+      "options": {
+        "fit": "Вместить",
+        "fill": "Заполнить",
+        "cover": "Покрыть"
       }
     },
     "File": {
       "display": {
         "title": "Файл",
-        "description": "Загрузить или встроить файл"
+        "description": "Для файлов и многого другого"
+      },
+      "placeholders": {
+        "click": "Нажмите, чтобы добавить файл"
+      },
+      "actions": {
+        "uploadFile": "Загрузить файл"
       }
     },
     "Embed": {
       "display": {
         "title": "Встроить",
-        "description": "Встроить контент с другого сайта"
+        "description": "Для встраивания видео, карт Google и многого другого"
+      },
+      "placeholders": {
+        "click": "Нажмите, чтобы добавить встроенный контент",
+        "paste": "Вставьте ссылку для встраивания"
+      },
+      "actions": {
+        "embedLink": "Встроить ссылку"
       }
     },
     "Divider": {
       "display": {
         "title": "Разделитель",
-        "description": "Визуально разделить блоки"
+        "description": "Разделить ваши блоки"
+      },
+      "options": {
+        "line": "Линия",
+        "dashed": "Пунктирная",
+        "dots": "Точки",
+        "gradient": "Градиент"
       }
     },
     "Accordion": {
       "display": {
         "title": "Аккордеон",
-        "description": "Создать складной аккордеон"
+        "description": "Создать складной контент"
       }
     },
     "Callout": {
       "display": {
         "title": "Выделение",
         "description": "Сделать текст заметным"
+      },
+      "themes": {
+        "default": "По умолчанию",
+        "info": "Информация",
+        "success": "Успех",
+        "warning": "Предупреждение",
+        "error": "Ошибка"
       }
     },
     "Link": {
       "display": {
         "title": "Ссылка",
-        "description": "Создать блок ссылки"
+        "description": "Создать ссылку"
       }
     }
   },
@@ -137,17 +239,49 @@
       "highlight": "Выделить",
       "highlightColor": {
         "text": "Цвет выделения"
+      },
+      "link": "Ссылка",
+      "ariaLabels": {
+        "blockFormatting": "Форматирование блока",
+        "textFormatting": "Форматирование текста",
+        "linkTool": "Инструмент ссылок",
+        "alignment": "Выравнивание",
+        "highlight": "Выделение",
+        "bold": "Жирный",
+        "italic": "Курсив",
+        "underline": "Подчеркнутый",
+        "strike": "Зачеркнутый",
+        "code": "Код"
       }
     },
     "linkTool": {
       "placeholder": "Вставьте или введите ссылку",
       "edit": "Редактировать ссылку",
       "unlink": "Удалить ссылку",
-      "openInNewTab": "Открыть в новой вкладке"
+      "openInNewTab": "Открыть в новой вкладке",
+      "labels": {
+        "linkTitle": "Заголовок ссылки",
+        "linkUrl": "URL ссылки",
+        "linkTarget": "Target ссылки",
+        "linkRel": "Rel ссылки",
+        "additionalProps": "Дополнительные свойства"
+      },
+      "placeholders": {
+        "editTitle": "Редактировать заголовок ссылки",
+        "editUrl": "Редактировать URL ссылки",
+        "editTarget": "Редактировать target ссылки",
+        "editRel": "Редактировать rel ссылки"
+      },
+      "actions": {
+        "add": "Добавить",
+        "update": "Обновить",
+        "delete": "Удалить ссылку"
+      }
     },
     "actionMenu": {
       "search": "Поиск блоков...",
-      "noResults": "Результаты не найдены"
+      "noResults": "Результаты не найдены",
+      "noActionsAvailable": "Нет доступных действий"
     }
   }
 }

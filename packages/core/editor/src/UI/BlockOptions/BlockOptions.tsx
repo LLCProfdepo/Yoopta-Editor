@@ -141,7 +141,9 @@ const BlockOptions = ({
                 <BlockOptionsMenuItem>
                   <button type="button" className="yoopta-block-options-button" onClick={onDelete}>
                     <TrashIcon className="yoo-editor-w-4 yoo-editor-h-4 yoo-editor-mr-2" />
-                    Delete
+                    {'getLabelText' in editor
+                      ? (editor as any).getLabelText('editor.blockOptions.delete')
+                      : 'Delete'}
                   </button>
                 </BlockOptionsMenuItem>
                 <BlockOptionsMenuItem>
@@ -150,7 +152,9 @@ const BlockOptions = ({
                     className="yoopta-block-options-button"
                     onClick={onDuplicate}>
                     <CopyIcon className="yoo-editor-w-4 yoo-editor-h-4 yoo-editor-mr-2" />
-                    Duplicate
+                    {'getLabelText' in editor
+                      ? (editor as any).getLabelText('editor.blockOptions.duplicate')
+                      : 'Duplicate'}
                   </button>
                 </BlockOptionsMenuItem>
                 {!!ActionMenu &&
@@ -176,14 +180,18 @@ const BlockOptions = ({
                         ref={actionMenuRefs.setReference}
                         onClick={() => setIsActionMenuOpen((open) => !open)}>
                         <TurnIcon className="yoo-editor-w-4 yoo-editor-h-4 yoo-editor-mr-2" />
-                        Turn into
+                        {'getLabelText' in editor
+                          ? (editor as any).getLabelText('editor.blockOptions.turnInto')
+                          : 'Turn into'}
                       </button>
                     </BlockOptionsMenuItem>
                   )}
                 <BlockOptionsMenuItem>
                   <button type="button" className="yoopta-block-options-button" onClick={onCopy}>
                     <Link2Icon className="yoo-editor-w-4 yoo-editor-h-4 yoo-editor-mr-2" />
-                    Copy link to block
+                    {'getLabelText' in editor
+                      ? (editor as any).getLabelText('editor.blockOptions.copyBlockLink')
+                      : 'Copy link to block'}
                   </button>
                 </BlockOptionsMenuItem>
               </BlockOptionsMenuGroup>

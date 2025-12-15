@@ -22,6 +22,18 @@ export type TranslationDictionary = {
       strike: string;
       code: string;
     };
+    loading: string;
+    common: {
+      update: string;
+      delete: string;
+      cancel: string;
+      save: string;
+      alignment: string;
+      open: string;
+      download: string;
+      add: string;
+      replace: string;
+    };
   };
   plugins: Record<
     string,
@@ -32,6 +44,9 @@ export type TranslationDictionary = {
       };
       placeholders?: Record<string, string>;
       labels?: Record<string, string>;
+      actions?: Record<string, string>;
+      options?: Record<string, string>;
+      themes?: Record<string, string>;
     }
   >;
   tools: {
@@ -45,16 +60,48 @@ export type TranslationDictionary = {
       highlightColor: {
         text: string;
       };
+      link: string;
+      ariaLabels: {
+        blockFormatting: string;
+        textFormatting: string;
+        linkTool: string;
+        alignment: string;
+        highlight: string;
+        bold: string;
+        italic: string;
+        underline: string;
+        strike: string;
+        code: string;
+      };
     };
     linkTool: {
       placeholder: string;
       edit: string;
       unlink: string;
       openInNewTab: string;
+      labels: {
+        linkTitle: string;
+        linkUrl: string;
+        linkTarget: string;
+        linkRel: string;
+        additionalProps: string;
+      };
+      placeholders: {
+        editTitle: string;
+        editUrl: string;
+        editTarget: string;
+        editRel: string;
+      };
+      actions: {
+        add: string;
+        update: string;
+        delete: string;
+      };
     };
     actionMenu: {
       search: string;
       noResults: string;
+      noActionsAvailable: string;
     };
   };
 };

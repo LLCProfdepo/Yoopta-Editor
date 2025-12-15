@@ -15,12 +15,24 @@
       "underline": "Subrayado",
       "strike": "Tachado",
       "code": "Código"
+    },
+    "loading": "Cargando...",
+    "common": {
+      "update": "Actualizar",
+      "delete": "Eliminar",
+      "cancel": "Cancelar",
+      "save": "Guardar",
+      "alignment": "Alineación",
+      "open": "Abrir",
+      "download": "Descargar",
+      "add": "Agregar",
+      "replace": "Reemplazar"
     }
   },
   "plugins": {
     "Paragraph": {
       "display": {
-        "title": "Párrafo",
+        "title": "Texto",
         "description": "Simplemente comienza a escribir texto"
       }
     },
@@ -51,7 +63,15 @@
     "Code": {
       "display": {
         "title": "Código",
-        "description": "Capturar un fragmento de código"
+        "description": "¡Escribe el mejor código!"
+      },
+      "labels": {
+        "language": "Idioma",
+        "theme": "Tema"
+      },
+      "actions": {
+        "copy": "Copiar",
+        "copied": "Copiado"
       }
     },
     "NumberedList": {
@@ -69,61 +89,143 @@
     "TodoList": {
       "display": {
         "title": "Lista de Tareas",
-        "description": "Seguir tareas con una lista de tareas"
+        "description": "Seguir tareas"
       }
     },
     "Table": {
       "display": {
         "title": "Tabla",
-        "description": "Insertar una tabla"
+        "description": "Insertar una tabla simple"
+      },
+      "labels": {
+        "headerRow": "Fila de encabezado",
+        "headerColumn": "Columna de encabezado"
+      },
+      "actions": {
+        "insertLeft": "Insertar izquierda",
+        "insertRight": "Insertar derecha",
+        "insertAbove": "Insertar arriba",
+        "insertBelow": "Insertar abajo",
+        "moveUp": "Mover arriba",
+        "moveDown": "Mover abajo",
+        "moveLeft": "Mover izquierda",
+        "moveRight": "Mover derecha",
+        "deleteRow": "Eliminar fila",
+        "deleteColumn": "Eliminar"
       }
     },
     "Image": {
       "display": {
         "title": "Imagen",
-        "description": "Subir o incrustar con un enlace"
+        "description": "Subir desde dispositivo o insertar con enlace"
+      },
+      "placeholders": {
+        "click": "Click para agregar imagen",
+        "paste": "Pegar enlace de imagen",
+        "editAlt": "Editar texto alternativo"
+      },
+      "labels": {
+        "altText": "Texto alternativo",
+        "replaceImage": "Reemplazar imagen"
+      },
+      "actions": {
+        "upload": "Subir",
+        "embedImage": "Incrustar imagen",
+        "uploadImage": "Subir imagen",
+        "imageLink": "Enlace de imagen"
+      },
+      "options": {
+        "fit": "Ajustar",
+        "fill": "Rellenar",
+        "cover": "Cubrir"
       }
     },
     "Video": {
       "display": {
         "title": "Video",
-        "description": "Incrustar un video"
+        "description": "Subir desde dispositivo, insertar desde Youtube, Vimeo, DailyMotion, Loom, Wistia"
+      },
+      "placeholders": {
+        "click": "Click para agregar video",
+        "paste": "Pegar enlace de video"
+      },
+      "labels": {
+        "replaceVideo": "Reemplazar video",
+        "replacePoster": "Reemplazar póster",
+        "addPoster": "Agregar póster"
+      },
+      "actions": {
+        "upload": "Subir",
+        "embedVideo": "Incrustar video",
+        "uploadVideo": "Subir video",
+        "videoLink": "Enlace de video"
+      },
+      "options": {
+        "fit": "Ajustar",
+        "fill": "Rellenar",
+        "cover": "Cubrir"
       }
     },
     "File": {
       "display": {
         "title": "Archivo",
-        "description": "Subir o incrustar un archivo"
+        "description": "Para archivos y más"
+      },
+      "placeholders": {
+        "click": "Click para agregar archivo"
+      },
+      "actions": {
+        "uploadFile": "Subir archivo"
       }
     },
     "Embed": {
       "display": {
         "title": "Incrustar",
-        "description": "Incrustar contenido de otro sitio"
+        "description": "Para incrustar videos, mapas de Google y más"
+      },
+      "placeholders": {
+        "click": "Click para agregar contenido incrustado",
+        "paste": "Pegar enlace para incrustar"
+      },
+      "actions": {
+        "embedLink": "Incrustar enlace"
       }
     },
     "Divider": {
       "display": {
         "title": "Divisor",
-        "description": "Dividir visualmente bloques"
+        "description": "Dividir tus bloques"
+      },
+      "options": {
+        "line": "Línea",
+        "dashed": "Discontinua",
+        "dots": "Puntos",
+        "gradient": "Degradado"
       }
     },
     "Accordion": {
       "display": {
         "title": "Acordeón",
-        "description": "Crear un acordeón plegable"
+        "description": "Crear contenido plegable"
       }
     },
     "Callout": {
       "display": {
         "title": "Destacado",
         "description": "Hacer que la escritura destaque"
+      },
+      "themes": {
+        "default": "Predeterminado",
+        "info": "Información",
+        "success": "Éxito",
+        "warning": "Advertencia",
+        "error": "Error"
       }
     },
     "Link": {
       "display": {
         "title": "Enlace",
-        "description": "Crear un bloque de enlace"
+        "description": "Crear enlace"
       }
     }
   },
@@ -137,17 +239,49 @@
       "highlight": "Resaltar",
       "highlightColor": {
         "text": "Color de resaltado"
+      },
+      "link": "Enlace",
+      "ariaLabels": {
+        "blockFormatting": "Formato de bloque",
+        "textFormatting": "Formato de texto",
+        "linkTool": "Herramienta de enlace",
+        "alignment": "Alineación",
+        "highlight": "Resaltar",
+        "bold": "Negrita",
+        "italic": "Cursiva",
+        "underline": "Subrayado",
+        "strike": "Tachado",
+        "code": "Código"
       }
     },
     "linkTool": {
       "placeholder": "Pegar o escribir un enlace",
       "edit": "Editar enlace",
       "unlink": "Quitar enlace",
-      "openInNewTab": "Abrir en nueva pestaña"
+      "openInNewTab": "Abrir en nueva pestaña",
+      "labels": {
+        "linkTitle": "Título del enlace",
+        "linkUrl": "URL del enlace",
+        "linkTarget": "Target del enlace",
+        "linkRel": "Rel del enlace",
+        "additionalProps": "Propiedades adicionales"
+      },
+      "placeholders": {
+        "editTitle": "Editar título del enlace",
+        "editUrl": "Editar URL del enlace",
+        "editTarget": "Editar target del enlace",
+        "editRel": "Editar rel del enlace"
+      },
+      "actions": {
+        "add": "Agregar",
+        "update": "Actualizar",
+        "delete": "Eliminar enlace"
+      }
     },
     "actionMenu": {
       "search": "Buscar bloques...",
-      "noResults": "No se encontraron resultados"
+      "noResults": "No se encontraron resultados",
+      "noActionsAvailable": "No hay acciones disponibles"
     }
   }
 }

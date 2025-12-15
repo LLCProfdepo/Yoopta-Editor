@@ -4,7 +4,7 @@
       "delete": "Delete",
       "duplicate": "Duplicate",
       "turnInto": "Turn into",
-      "copyBlockLink": "Copy block link",
+      "copyBlockLink": "Copy link to block",
       "moveUp": "Move up",
       "moveDown": "Move down"
     },
@@ -15,13 +15,25 @@
       "underline": "Underline",
       "strike": "Strikethrough",
       "code": "Code"
+    },
+    "loading": "Loading...",
+    "common": {
+      "update": "Update",
+      "delete": "Delete",
+      "cancel": "Cancel",
+      "save": "Save",
+      "alignment": "Alignment",
+      "open": "Open",
+      "download": "Download",
+      "add": "Add",
+      "replace": "Replace"
     }
   },
   "plugins": {
     "Paragraph": {
       "display": {
-        "title": "Paragraph",
-        "description": "Just start writing plain text"
+        "title": "Text",
+        "description": "Start writing plain text."
       }
     },
     "HeadingOne": {
@@ -44,86 +56,176 @@
     },
     "Blockquote": {
       "display": {
-        "title": "Quote",
-        "description": "Capture a quote"
+        "title": "Blockquote",
+        "description": "Capture quote"
       }
     },
     "Code": {
       "display": {
         "title": "Code",
-        "description": "Capture a code snippet"
+        "description": "Write the best code ever!"
+      },
+      "labels": {
+        "language": "Language",
+        "theme": "Theme"
+      },
+      "actions": {
+        "copy": "Copy",
+        "copied": "Copied"
       }
     },
     "NumberedList": {
       "display": {
         "title": "Numbered List",
-        "description": "Create a list with numbering"
+        "description": "Create list with numbering"
       }
     },
     "BulletedList": {
       "display": {
         "title": "Bulleted List",
-        "description": "Create a simple bulleted list"
+        "description": "Create bullet list"
       }
     },
     "TodoList": {
       "display": {
-        "title": "To-do List",
-        "description": "Track tasks with a to-do list"
+        "title": "Todo List",
+        "description": "Track tasks"
       }
     },
     "Table": {
       "display": {
         "title": "Table",
-        "description": "Insert a table"
+        "description": "Add simple table"
+      },
+      "labels": {
+        "headerRow": "Header row",
+        "headerColumn": "Header column"
+      },
+      "actions": {
+        "insertLeft": "Insert left",
+        "insertRight": "Insert right",
+        "insertAbove": "Insert above",
+        "insertBelow": "Insert below",
+        "moveUp": "Move up",
+        "moveDown": "Move down",
+        "moveLeft": "Move left",
+        "moveRight": "Move right",
+        "deleteRow": "Delete row",
+        "deleteColumn": "Delete"
       }
     },
     "Image": {
       "display": {
         "title": "Image",
-        "description": "Upload or embed with a link"
+        "description": "Upload from device or insert with link"
+      },
+      "placeholders": {
+        "click": "Click to add image",
+        "paste": "Paste image link",
+        "editAlt": "Edit alt text"
+      },
+      "labels": {
+        "altText": "Alternative text",
+        "replaceImage": "Replace image"
+      },
+      "actions": {
+        "upload": "Upload",
+        "embedImage": "Embed image",
+        "uploadImage": "Upload image",
+        "imageLink": "Image link"
+      },
+      "options": {
+        "fit": "Fit",
+        "fill": "Fill",
+        "cover": "Cover"
       }
     },
     "Video": {
       "display": {
         "title": "Video",
-        "description": "Embed a video"
+        "description": "Upload from device, insert from Youtube, Vimeo, DailyMotion, Loom, Wistia"
+      },
+      "placeholders": {
+        "click": "Click to add video",
+        "paste": "Paste video link"
+      },
+      "labels": {
+        "replaceVideo": "Replace video",
+        "replacePoster": "Replace poster",
+        "addPoster": "Add poster"
+      },
+      "actions": {
+        "upload": "Upload",
+        "embedVideo": "Embed video",
+        "uploadVideo": "Upload video",
+        "videoLink": "Video link"
+      },
+      "options": {
+        "fit": "Fit",
+        "fill": "Fill",
+        "cover": "Cover"
       }
     },
     "File": {
       "display": {
         "title": "File",
-        "description": "Upload or embed a file"
+        "description": "For files and more"
+      },
+      "placeholders": {
+        "click": "Click to add file"
+      },
+      "actions": {
+        "uploadFile": "Upload file"
       }
     },
     "Embed": {
       "display": {
         "title": "Embed",
-        "description": "Embed content from another site"
+        "description": "For embed videos, google maps and more"
+      },
+      "placeholders": {
+        "click": "Click to add embed",
+        "paste": "Paste embed link"
+      },
+      "actions": {
+        "embedLink": "Embed link"
       }
     },
     "Divider": {
       "display": {
         "title": "Divider",
-        "description": "Visually divide blocks"
+        "description": "Divide your blocks"
+      },
+      "options": {
+        "line": "Line",
+        "dashed": "Dashed",
+        "dots": "Dots",
+        "gradient": "Gradient"
       }
     },
     "Accordion": {
       "display": {
         "title": "Accordion",
-        "description": "Create a collapsible accordion"
+        "description": "Create collapses"
       }
     },
     "Callout": {
       "display": {
         "title": "Callout",
         "description": "Make writing stand out"
+      },
+      "themes": {
+        "default": "Default",
+        "info": "Info",
+        "success": "Success",
+        "warning": "Warning",
+        "error": "Error"
       }
     },
     "Link": {
       "display": {
         "title": "Link",
-        "description": "Create a link block"
+        "description": "Create link"
       }
     }
   },
@@ -137,17 +239,49 @@
       "highlight": "Highlight",
       "highlightColor": {
         "text": "Highlight color"
+      },
+      "link": "Link",
+      "ariaLabels": {
+        "blockFormatting": "Block formatting",
+        "textFormatting": "Text formatting",
+        "linkTool": "LinkTool",
+        "alignment": "Alignment",
+        "highlight": "Highlight",
+        "bold": "Bold",
+        "italic": "Italic",
+        "underline": "Underline",
+        "strike": "Strike",
+        "code": "Code"
       }
     },
     "linkTool": {
       "placeholder": "Paste or type a link",
       "edit": "Edit link",
       "unlink": "Remove link",
-      "openInNewTab": "Open in new tab"
+      "openInNewTab": "Open in new tab",
+      "labels": {
+        "linkTitle": "Link title",
+        "linkUrl": "Link URL",
+        "linkTarget": "Link target",
+        "linkRel": "Link rel",
+        "additionalProps": "Additional props"
+      },
+      "placeholders": {
+        "editTitle": "Edit link title",
+        "editUrl": "Edit link URL",
+        "editTarget": "Edit link target",
+        "editRel": "Edit link rel"
+      },
+      "actions": {
+        "add": "Add",
+        "update": "Update",
+        "delete": "Delete link"
+      }
     },
     "actionMenu": {
       "search": "Search blocks...",
-      "noResults": "No results found"
+      "noResults": "No results found",
+      "noActionsAvailable": "No actions available"
     }
   }
 }
