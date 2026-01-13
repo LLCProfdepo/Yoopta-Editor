@@ -42,8 +42,8 @@ const HeadingOne = new YooptaPlugin<Record<'heading-one', HeadingOneElement>>({
   commands: HeadingOneCommands,
   options: {
     display: {
-      title: 'Heading 1',
-      description: 'Big section heading',
+      title: 'plugins.HeadingOne.display.title',
+      description: 'plugins.HeadingOne.display.description',
     },
     shortcuts: ['h1', '#'],
   },

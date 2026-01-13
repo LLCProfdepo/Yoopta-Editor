@@ -1,6 +1,6 @@
 import type { CSSProperties} from 'react';
 import { useState } from 'react';
-import { UI } from '@yoopta/editor';
+import { UI, useYooptaEditor } from '@yoopta/editor';
 
 import { EmbedUploader } from './EmbedUploader';
 import { FileUploader } from './FileUploader';
@@ -17,6 +17,7 @@ const { Overlay, Portal } = UI;
 type Tab = 'upload' | 'embed';
 
 const ImageUploader = ({ floatingStyles, refs, onClose, blockId, onSetLoading }: Props) => {
+  const editor = useYooptaEditor();
   const [activeTab, setActiveTab] = useState<Tab>('upload');
 
   const switchTab = (tab: Tab) => setActiveTab(tab);
@@ -39,14 +40,18 @@ const ImageUploader = ({ floatingStyles, refs, onClose, blockId, onSetLoading }:
                 onClick={() => switchTab('upload')}
                 style={getTabStyles(isUploader)}
                 className="yoopta-button yoo-image-py-[6px] yoo-image-whitespace-nowrap yoo-image-min-w-0 yoo-image-flex-shrink-0 yoo-image-text-[rgb(55,53,47)] yoo-image-relative yoo-image-cursor-pointer yoo-image-user-select-none yoo-image-bg-inherit yoo-image-transition-[height_20ms_ease-in] yoo-image-inline-flex yoo-image-items-center yoo-image-h-full yoo-image-text-[14px] yoo-image-leading-[1.2] yoo-image-px-[8px]">
-                Upload
+                {'getLabelText' in editor
+                  ? (editor as any).getLabelText('plugins.Image.actions.upload')
+                  : 'Upload'}
               </button>
               <button
                 type="button"
                 onClick={() => switchTab('embed')}
                 style={getTabStyles(isEmbed)}
                 className="yoopta-button yoo-image-py-[6px] yoo-image-whitespace-nowrap yoo-image-min-w-0 yoo-image-flex-shrink-0 yoo-image-text-[rgb(55,53,47)] yoo-image-relative yoo-image-cursor-pointer yoo-image-user-select-none yoo-image-bg-inherit yoo-image-transition-[height_20ms_ease-in] yoo-image-inline-flex yoo-image-items-center yoo-image-h-full yoo-image-text-[14px] yoo-image-leading-[1.2] yoo-image-px-[8px]">
-                Image link
+                {'getLabelText' in editor
+                  ? (editor as any).getLabelText('plugins.Image.actions.imageLink')
+                  : 'Image link'}
               </button>
             </div>
             <div className="yoo-image-pt-[6px] yoo-image-pb-[6px] yoo-image-mt-[4px] yoo-image-flex yoo-image-justify-center yoo-image-mr-[12px] yoo-image-ml-[12px]">

@@ -64,8 +64,8 @@ const Table = new YooptaPlugin<TableElementMap>({
   extensions: withTable,
   options: {
     display: {
-      title: 'Table',
-      description: 'Add simple table',
+      title: 'plugins.Table.display.title',
+      description: 'plugins.Table.display.description',
     },
     shortcuts: ['table', '||', '3x3'],
   },

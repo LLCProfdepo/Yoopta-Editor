@@ -27,8 +27,8 @@ const File = new YooptaPlugin<FileElementMap, FilePluginOptions>({
   commands: FileCommands,
   options: {
     display: {
-      title: 'File',
-      description: 'For files and more',
+      title: 'plugins.File.display.title',
+      description: 'plugins.File.display.description',
     },
     accept: '',
     // onUpload: async () => Promise.resolve({ src: '' }),

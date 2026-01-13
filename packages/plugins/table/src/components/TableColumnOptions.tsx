@@ -103,26 +103,34 @@ const TableColumnOptions = ({ editor, blockId, element, onClose, ...props }: Pro
             className="yoopta-block-options-button"
             onClick={insertColumnBefore}>
             <ArrowLeftIcon className="yoopta-table-icons" />
-            Insert left
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('plugins.Table.actions.insertLeft')
+              : 'Insert left'}
           </button>
         </BlockOptionsMenuItem>
         <BlockOptionsMenuItem>
           <button type="button" className="yoopta-block-options-button" onClick={insertColumnAfter}>
             <ArrowRightIcon className="yoopta-table-icons" />
-            Insert right
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('plugins.Table.actions.insertRight')
+              : 'Insert right'}
           </button>
         </BlockOptionsMenuItem>
         <BlockOptionsSeparator />
         <BlockOptionsMenuItem>
           <button type="button" className="yoopta-block-options-button" onClick={moveColumnRight}>
             <MoveRightIcon className="yoopta-table-icons" />
-            Move right
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('plugins.Table.actions.moveRight')
+              : 'Move right'}
           </button>
         </BlockOptionsMenuItem>
         <BlockOptionsMenuItem>
           <button type="button" className="yoopta-block-options-button" onClick={moveColumnLeft}>
             <MoveLeftIcon className="yoopta-table-icons" />
-            Move left
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('plugins.Table.actions.moveLeft')
+              : 'Move left'}
           </button>
         </BlockOptionsMenuItem>
         <BlockOptionsSeparator />
@@ -130,7 +138,9 @@ const TableColumnOptions = ({ editor, blockId, element, onClose, ...props }: Pro
         <BlockOptionsMenuItem>
           <button type="button" className="yoopta-block-options-button" onClick={deleteTableColumn}>
             <TrashIcon className="yoopta-table-icons" />
-            Delete
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('plugins.Table.actions.deleteColumn')
+              : 'Delete'}
           </button>
         </BlockOptionsMenuItem>
       </BlockOptionsMenuGroup>

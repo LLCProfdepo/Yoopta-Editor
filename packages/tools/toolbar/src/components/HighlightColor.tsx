@@ -10,28 +10,28 @@ const { Portal } = UI;
 
 const COLOR_PRESETS = {
   text: [
-    { name: 'Default', value: 'black' },
-    { name: 'Gray', value: '#787774' },
-    { name: 'Brown', value: '#976D57' },
-    { name: 'Orange', value: '#CC772F' },
-    { name: 'Yellow', value: '#C29243' },
-    { name: 'Green', value: '#548064' },
-    { name: 'Blue', value: '#477DA5' },
-    { name: 'Purple', value: '#A48BBE' },
-    { name: 'Pink', value: '#B35588' },
-    { name: 'Red', value: '#C4554D' },
+    { name: 'tools.toolbar.highlightColor.colors.default', value: 'black' },
+    { name: 'tools.toolbar.highlightColor.colors.gray', value: '#787774' },
+    { name: 'tools.toolbar.highlightColor.colors.brown', value: '#976D57' },
+    { name: 'tools.toolbar.highlightColor.colors.orange', value: '#CC772F' },
+    { name: 'tools.toolbar.highlightColor.colors.yellow', value: '#C29243' },
+    { name: 'tools.toolbar.highlightColor.colors.green', value: '#548064' },
+    { name: 'tools.toolbar.highlightColor.colors.blue', value: '#477DA5' },
+    { name: 'tools.toolbar.highlightColor.colors.purple', value: '#A48BBE' },
+    { name: 'tools.toolbar.highlightColor.colors.pink', value: '#B35588' },
+    { name: 'tools.toolbar.highlightColor.colors.red', value: '#C4554D' },
   ],
   background: [
-    { name: 'Default', value: 'unset' },
-    { name: 'Gray', value: '#F1F1EF' },
-    { name: 'Brown', value: '#F3EEEE' },
-    { name: 'Orange', value: '#F8ECDF' },
-    { name: 'Yellow', value: '#FAF3DD' },
-    { name: 'Green', value: '#EEF3ED' },
-    { name: 'Blue', value: '#E9F3F7' },
-    { name: 'Purple', value: '#F6F3F8' },
-    { name: 'Pink', value: '#F9F2F5' },
-    { name: 'Red', value: '#FAECEC' },
+    { name: 'tools.toolbar.highlightColor.colors.default', value: 'unset' },
+    { name: 'tools.toolbar.highlightColor.colors.gray', value: '#F1F1EF' },
+    { name: 'tools.toolbar.highlightColor.colors.brown', value: '#F3EEEE' },
+    { name: 'tools.toolbar.highlightColor.colors.orange', value: '#F8ECDF' },
+    { name: 'tools.toolbar.highlightColor.colors.yellow', value: '#FAF3DD' },
+    { name: 'tools.toolbar.highlightColor.colors.green', value: '#EEF3ED' },
+    { name: 'tools.toolbar.highlightColor.colors.blue', value: '#E9F3F7' },
+    { name: 'tools.toolbar.highlightColor.colors.purple', value: '#F6F3F8' },
+    { name: 'tools.toolbar.highlightColor.colors.pink', value: '#F9F2F5' },
+    { name: 'tools.toolbar.highlightColor.colors.red', value: '#FAECEC' },
   ],
 };
 
@@ -113,7 +113,7 @@ const HighlightColor = ({ editor, refs, floatingStyles, highlightColors = {} }: 
                   : 'yoo-toolbar-text-gray-600 hover:yoo-toolbar-bg-gray-50'
               }`}
               onClick={() => setTab('text')}>
-              Text
+              {'getLabelText' in editor ? (editor as any).getLabelText('tools.toolbar.highlightColor.tabs.textColor') : 'Text'}
             </button>
             <button
               type="button"
@@ -123,7 +123,7 @@ const HighlightColor = ({ editor, refs, floatingStyles, highlightColors = {} }: 
                   : 'yoo-toolbar-text-gray-600 hover:yoo-toolbar-bg-gray-50'
               }`}
               onClick={() => setTab('background')}>
-              Background
+              {'getLabelText' in editor ? (editor as any).getLabelText('tools.toolbar.highlightColor.tabs.background') : 'Background'}
             </button>
           </div>
 
@@ -133,7 +133,7 @@ const HighlightColor = ({ editor, refs, floatingStyles, highlightColors = {} }: 
               <button
                 type="button"
                 key={name}
-                title={name}
+                title={'getLabelText' in editor ? (editor as any).getLabelText(name as any) : name}
                 className="yoo-toolbar-w-6 yoo-toolbar-h-6 yoo-toolbar-rounded yoo-toolbar-transition-all hover:yoo-toolbar-scale-110"
                 style={getItemStyles(tab === 'text' ? 'color' : 'backgroundColor', value)}
                 onClick={() =>
@@ -149,7 +149,7 @@ const HighlightColor = ({ editor, refs, floatingStyles, highlightColors = {} }: 
               type="button"
               className="yoo-toolbar-text-sm yoo-toolbar-text-gray-600 hover:yoo-toolbar-text-gray-900 yoo-toolbar-flex yoo-toolbar-items-center"
               onClick={() => setShowColorPicker(!showColorPicker)}>
-              Color Picker
+              {'getLabelText' in editor ? (editor as any).getLabelText('tools.toolbar.highlightColor.colorPicker') : 'Color Picker'}
               <PaletteIcon className="yoo-toolbar-w-4 yoo-toolbar-h-4 yoo-toolbar-ml-1" />
             </button>
 

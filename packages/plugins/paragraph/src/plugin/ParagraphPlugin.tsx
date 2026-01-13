@@ -14,8 +14,8 @@ const Paragraph = new YooptaPlugin<ParagraphElementMap>({
   },
   options: {
     display: {
-      title: 'Text',
-      description: 'Start writing plain text.',
+      title: 'plugins.Paragraph.display.title',
+      description: 'plugins.Paragraph.display.description',
     },
     shortcuts: ['p', 'text'],
   },

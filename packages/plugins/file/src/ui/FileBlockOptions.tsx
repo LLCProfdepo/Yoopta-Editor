@@ -50,7 +50,9 @@ const FileBlockOptions = ({ editor, block, props: fileProps }: Props) => {
         <BlockOptionsMenuItem>
           <button type="button" className="yoopta-block-options-button" onClick={onToggleAlign}>
             <AlignIcon width={16} height={16} className="yoo-file-w-4 yoo-file-h-4 yoo-file-mr-2" />
-            Alignment
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('editor.common.alignment')
+              : 'Alignment'}
           </button>
         </BlockOptionsMenuItem>
         <BlockOptionsMenuItem>
@@ -60,7 +62,9 @@ const FileBlockOptions = ({ editor, block, props: fileProps }: Props) => {
               height={16}
               className="yoo-file-w-4 yoo-file-h-4 yoo-file-mr-2"
             />
-            Open
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('editor.common.open')
+              : 'Open'}
           </button>
         </BlockOptionsMenuItem>
       </BlockOptionsMenuGroup>

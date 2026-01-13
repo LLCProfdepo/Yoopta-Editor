@@ -68,7 +68,9 @@ const FileUploader = ({ accept = 'video/*', onClose, blockId, onSetLoading }: Pr
           onChange={onChange}
           multiple={false}
         />
-        Upload video
+        {'getLabelText' in editor
+          ? (editor as any).getLabelText('plugins.Video.actions.uploadVideo')
+          : 'Upload video'}
       </label>
     </div>
   );

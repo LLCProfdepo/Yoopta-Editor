@@ -20,8 +20,8 @@ const Link = new YooptaPlugin<LinkElementMap>({
   },
   options: {
     display: {
-      title: 'Link',
-      description: 'Create link',
+      title: 'plugins.Link.display.title',
+      description: 'plugins.Link.display.description',
     },
   },
   commands: LinkCommands,

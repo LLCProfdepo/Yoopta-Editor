@@ -226,6 +226,9 @@
       "display": {
         "title": "Ссылка",
         "description": "Создать ссылку"
+      },
+      "actions": {
+        "edit": "Редактировать"
       }
     }
   },
@@ -238,7 +241,24 @@
       "code": "Код",
       "highlight": "Выделить",
       "highlightColor": {
-        "text": "Цвет выделения"
+        "text": "Цвет выделения",
+        "tabs": {
+          "textColor": "Текст",
+          "background": "Фон"
+        },
+        "colorPicker": "Палитра цветов",
+        "colors": {
+          "default": "По умолчанию",
+          "gray": "Серый",
+          "brown": "Коричневый",
+          "orange": "Оранжевый",
+          "yellow": "Желтый",
+          "green": "Зеленый",
+          "blue": "Синий",
+          "purple": "Фиолетовый",
+          "pink": "Розовый",
+          "red": "Красный"
+        }
       },
       "link": "Ссылка",
       "ariaLabels": {

@@ -2,11 +2,13 @@ import type { CSSProperties} from 'react';
 import { useState } from 'react';
 import { flip, inline, offset, shift, useFloating } from '@floating-ui/react';
 import { ImageIcon } from '@radix-ui/react-icons';
+import { useYooptaEditor } from '@yoopta/editor';
 
 import { ImageUploader } from './ImageUploader';
 import { Loader } from './Loader';
 
 const Placeholder = ({ attributes, children, blockId }) => {
+  const editor = useYooptaEditor();
   const [isUploaderOpen, setIsUploaderOpen] = useState(false);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -41,7 +43,13 @@ const Placeholder = ({ attributes, children, blockId }) => {
           <ImageIcon className="yoo-image-mr-2 yoo-image-user-select-none" width={24} height={24} />
         )}
         <span className="yoo-image-font-medium">
-          {loading ? 'Loading...' : 'Click to add image'}
+          {loading
+            ? ('getLabelText' in editor
+                ? (editor as any).getLabelText('editor.loading')
+                : 'Loading...')
+            : ('getLabelText' in editor
+                ? (editor as any).getLabelText('plugins.Image.placeholders.click')
+                : 'Click to add image')}
         </span>
         {loading && (
           <div

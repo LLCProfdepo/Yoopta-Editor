@@ -42,7 +42,9 @@ const DefaultActionMenuRender = ({
           className="yoo-action-menu-overflow-hidden yoo-action-menu-p-0 yoo-action-menu-text-foreground">
           {empty && (
             <div className="yoo-action-menu-text-left yoo-action-menu-text-muted-foreground yoo-action-menu-text-xs yoo-action-menu-px-1 yoo-action-menu-py-1">
-              No actions available
+              {'getLabelText' in editor
+                ? (editor as any).getLabelText('tools.actionMenu.noActionsAvailable')
+                : 'No actions available'}
             </div>
           )}
           {actions.map((action, i) => {

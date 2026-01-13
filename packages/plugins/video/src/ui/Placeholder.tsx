@@ -2,6 +2,7 @@ import type { CSSProperties} from 'react';
 import { useState } from 'react';
 import { flip, inline, offset, shift, useFloating } from '@floating-ui/react';
 import { VideoIcon } from '@radix-ui/react-icons';
+import { useYooptaEditor } from '@yoopta/editor';
 
 import { Loader } from './Loader';
 import { VideoUploader } from './VideoUploader';
@@ -12,6 +13,7 @@ const loadingStyles: CSSProperties = {
 };
 
 const Placeholder = ({ attributes, children, blockId }) => {
+  const editor = useYooptaEditor();
   const [isUploaderOpen, setIsUploaderOpen] = useState(false);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -41,7 +43,13 @@ const Placeholder = ({ attributes, children, blockId }) => {
           <VideoIcon className="yoo-video-mr-2 yoo-video-user-select-none" width={24} height={24} />
         )}
         <span className="yoo-video-font-medium">
-          {loading ? 'Loading...' : 'Click to add video'}
+          {loading
+            ? ('getLabelText' in editor
+                ? (editor as any).getLabelText('editor.loading')
+                : 'Loading...')
+            : ('getLabelText' in editor
+                ? (editor as any).getLabelText('plugins.Video.placeholders.click')
+                : 'Click to add video')}
         </span>
         {loading && (
           <div

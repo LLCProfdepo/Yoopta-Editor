@@ -171,7 +171,9 @@ const ImageBlockOptions = ({ editor, block, props: imageProps }: Props) => {
                 height={16}
                 className="yoo-image-w-4 yoo-image-h-4 yoo-image-mr-2"
               />
-              Fit
+              {'getLabelText' in editor
+                ? (editor as any).getLabelText('plugins.Image.options.fit')
+                : 'Fit'}
             </span>
             {imageProps?.fit === 'contain' && (
               <CheckmarkIcon width={16} height={16} className="yoo-image-w-4 yoo-image-h-4" />
@@ -189,7 +191,9 @@ const ImageBlockOptions = ({ editor, block, props: imageProps }: Props) => {
                 height={16}
                 className="yoo-image-w-4 yoo-image-h-4 yoo-image-mr-2"
               />
-              Fill
+              {'getLabelText' in editor
+                ? (editor as any).getLabelText('plugins.Image.options.fill')
+                : 'Fill'}
             </span>
             {imageProps?.fit === 'fill' && (
               <CheckmarkIcon width={16} height={16} className="yoo-image-w-4 yoo-image-h-4" />
@@ -207,7 +211,9 @@ const ImageBlockOptions = ({ editor, block, props: imageProps }: Props) => {
                 height={16}
                 className="yoo-image-w-4 yoo-image-h-4 yoo-image-mr-2"
               />
-              Cover
+              {'getLabelText' in editor
+                ? (editor as any).getLabelText('plugins.Image.options.cover')
+                : 'Cover'}
             </span>
             {imageProps?.fit === 'cover' && (
               <CheckmarkIcon width={16} height={16} className="yoo-image-w-4 yoo-image-h-4" />
@@ -239,7 +245,9 @@ const ImageBlockOptions = ({ editor, block, props: imageProps }: Props) => {
               height={16}
               className="yoo-image-w-4 yoo-image-h-4 yoo-image-mr-2"
             />
-            Alt text
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('plugins.Image.labels.altText')
+              : 'Alt text'}
           </button>
         </BlockOptionsMenuItem>
         <BlockOptionsMenuItem>
@@ -269,7 +277,9 @@ const ImageBlockOptions = ({ editor, block, props: imageProps }: Props) => {
                 className="yoo-image-w-4 yoo-image-h-4 yoo-image-mr-2"
               />
             )}
-            Replace image
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('plugins.Image.labels.replaceImage')
+              : 'Replace image'}
           </label>
         </BlockOptionsMenuItem>
       </BlockOptionsMenuGroup>
@@ -285,7 +295,9 @@ const ImageBlockOptions = ({ editor, block, props: imageProps }: Props) => {
               height={16}
               className="yoo-image-w-4 yoo-image-h-4 yoo-image-mr-2"
             />
-            Alignment
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('editor.common.alignment')
+              : 'Alignment'}
           </button>
         </BlockOptionsMenuItem>
         <BlockOptionsMenuItem>
@@ -295,7 +307,9 @@ const ImageBlockOptions = ({ editor, block, props: imageProps }: Props) => {
               height={16}
               className="yoo-image-w-4 yoo-image-h-4 yoo-image-mr-2"
             />
-            Download
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('editor.common.download')
+              : 'Download'}
           </button>
         </BlockOptionsMenuItem>
       </BlockOptionsMenuGroup>

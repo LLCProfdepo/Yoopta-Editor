@@ -31,8 +31,8 @@ const Code = new YooptaPlugin<CodeElementMap, CodePluginBlockOptions>({
   },
   options: {
     display: {
-      title: 'Code',
-      description: 'Write the best code ever!',
+      title: 'plugins.Code.display.title',
+      description: 'plugins.Code.display.description',
     },
     shortcuts: ['```', 'code', 'js'],
   },

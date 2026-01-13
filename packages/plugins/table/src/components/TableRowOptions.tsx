@@ -83,33 +83,43 @@ const TableRowOptions = ({ editor, blockId, onClose, tdElement, ...props }: Prop
         <BlockOptionsMenuItem>
           <button type="button" className="yoopta-block-options-button" onClick={insertRowBefore}>
             <CornerUpRight className="yoopta-table-icons" />
-            Insert above
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('plugins.Table.actions.insertAbove')
+              : 'Insert above'}
           </button>
         </BlockOptionsMenuItem>
         <BlockOptionsMenuItem>
           <button type="button" className="yoopta-block-options-button" onClick={insertRowAfter}>
             <CornerDownRight className="yoopta-table-icons" />
-            Insert below
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('plugins.Table.actions.insertBelow')
+              : 'Insert below'}
           </button>
         </BlockOptionsMenuItem>
         <BlockOptionsSeparator />
         <BlockOptionsMenuItem>
           <button type="button" className="yoopta-block-options-button" onClick={moveRowUp}>
             <MoveUpIcon className="yoopta-table-icons" />
-            Move up
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('plugins.Table.actions.moveUp')
+              : 'Move up'}
           </button>
         </BlockOptionsMenuItem>
         <BlockOptionsMenuItem>
           <button type="button" className="yoopta-block-options-button" onClick={moveRowDown}>
             <MoveDownIcon className="yoopta-table-icons" />
-            Move down
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('plugins.Table.actions.moveDown')
+              : 'Move down'}
           </button>
         </BlockOptionsMenuItem>
         <BlockOptionsSeparator />
         <BlockOptionsMenuItem>
           <button type="button" className="yoopta-block-options-button" onClick={deleteTableRow}>
             <TrashIcon className="yoopta-table-icons" />
-            Delete row
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('plugins.Table.actions.deleteRow')
+              : 'Delete row'}
           </button>
         </BlockOptionsMenuItem>
       </BlockOptionsMenuGroup>

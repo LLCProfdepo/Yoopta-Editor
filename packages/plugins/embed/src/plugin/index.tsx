@@ -23,8 +23,8 @@ const Embed = new YooptaPlugin<EmbedElementMap, EmbedPluginOptions>({
   },
   options: {
     display: {
-      title: 'Embed',
-      description: 'For embed videos, google maps and more',
+      title: 'plugins.Embed.display.title',
+      description: 'plugins.Embed.display.description',
     },
     shortcuts: ['instagram', 'twitter', 'youtube', 'vimeo', 'dailymotion', 'figma'],
   },

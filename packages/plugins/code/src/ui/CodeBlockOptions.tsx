@@ -59,7 +59,13 @@ export const CodeBlockOptions = ({ block, editor, element }: Props) => {
         <BlockOptionsMenuItem>
           <button type="button" className="yoopta-block-options-button" onClick={onCopy}>
             <CopyIcon className="yoo-code-w-4 yoo-code-h-4 yoo-code-mr-2" />
-            {isCopied ? 'Copied' : 'Copy'}
+            {isCopied
+              ? 'getLabelText' in editor
+                ? (editor as any).getLabelText('plugins.Code.actions.copied')
+                : 'Copied'
+              : 'getLabelText' in editor
+                ? (editor as any).getLabelText('plugins.Code.actions.copy')
+                : 'Copy'}
           </button>
         </BlockOptionsMenuItem>
         <BlockOptionsMenuItem>
@@ -72,7 +78,9 @@ export const CodeBlockOptions = ({ block, editor, element }: Props) => {
             value={element.props?.theme || 'VSCode'}>
             <Trigger className="yoopta-block-options-button">
               <ThemeIcon className="yoo-code-w-4 yoo-code-h-4 yoo-code-mr-2" />
-              Theme
+              {'getLabelText' in editor
+                ? (editor as any).getLabelText('plugins.Code.labels.theme')
+                : 'Theme'}
             </Trigger>
           </Select>
         </BlockOptionsMenuItem>
@@ -89,7 +97,9 @@ export const CodeBlockOptions = ({ block, editor, element }: Props) => {
             value={element.props?.language || 'JavaScript'}>
             <Trigger className="yoopta-block-options-button">
               <CodeIcon className="yoo-code-w-4 yoo-code-h-4 yoo-code-mr-2" />
-              Language
+              {'getLabelText' in editor
+                ? (editor as any).getLabelText('plugins.Code.labels.language')
+                : 'Language'}
             </Trigger>
           </Select>
         </BlockOptionsMenuItem>

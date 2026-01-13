@@ -136,7 +136,9 @@ const LinkHoverPreview = ({ style, setFloating, element, setHoldLinkTool, blockI
             setHoldLinkTool((prev) => !prev);
             setIsEditLinkToolsOpen((prev) => !prev);
           }}>
-          Edit
+          {'getLabelText' in editor
+            ? (editor as any).getLabelText('plugins.Link.actions.edit')
+            : 'Edit'}
         </button>
       </div>
     </Portal>

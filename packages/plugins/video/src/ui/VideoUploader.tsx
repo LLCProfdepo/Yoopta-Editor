@@ -1,6 +1,6 @@
 import type { CSSProperties} from 'react';
 import { useState } from 'react';
-import { UI } from '@yoopta/editor';
+import { UI, useYooptaEditor } from '@yoopta/editor';
 
 import { EmbedUploader } from './EmbedUploader';
 import { FileUploader } from './FileUploader';
@@ -18,6 +18,7 @@ type Props = {
 type Tab = 'upload' | 'embed';
 
 const VideoUploader = ({ floatingStyles, refs, onClose, blockId, onSetLoading }: Props) => {
+  const editor = useYooptaEditor();
   const [activeTab, setActiveTab] = useState<Tab>('upload');
 
   const switchTab = (tab: Tab) => setActiveTab(tab);
@@ -40,14 +41,18 @@ const VideoUploader = ({ floatingStyles, refs, onClose, blockId, onSetLoading }:
                 onClick={() => switchTab('upload')}
                 style={getTabStyles(isUploader)}
                 className="yoopta-button yoo-video-py-[6px] yoo-video-whitespace-nowrap yoo-video-min-w-0 yoo-video-flex-shrink-0 yoo-video-text-[rgb(55,53,47)] yoo-video-relative yoo-video-cursor-pointer yoo-video-user-select-none yoo-video-bg-inherit yoo-video-transition-[height_20ms_ease-in] yoo-video-inline-flex yoo-video-items-center yoo-video-h-full yoo-video-text-[14px] yoo-video-leading-[1.2] yoo-video-px-[8px]">
-                Upload
+                {'getLabelText' in editor
+                  ? (editor as any).getLabelText('plugins.Video.actions.upload')
+                  : 'Upload'}
               </button>
               <button
                 type="button"
                 onClick={() => switchTab('embed')}
                 style={getTabStyles(isEmbed)}
                 className="yoopta-button yoo-video-py-[6px] yoo-video-whitespace-nowrap yoo-video-min-w-0 yoo-video-flex-shrink-0 yoo-video-text-[rgb(55,53,47)] yoo-video-relative yoo-video-cursor-pointer yoo-video-user-select-none yoo-video-bg-inherit yoo-video-transition-[height_20ms_ease-in] yoo-video-inline-flex yoo-video-items-center yoo-video-h-full yoo-video-text-[14px] yoo-video-leading-[1.2] yoo-video-px-[8px]">
-                Video link
+                {'getLabelText' in editor
+                  ? (editor as any).getLabelText('plugins.Video.actions.videoLink')
+                  : 'Video link'}
               </button>
             </div>
             <div className="yoo-video-pt-[6px] yoo-video-pb-[6px] yoo-video-mt-[4px] yoo-video-flex yoo-video-justify-center yoo-video-mr-[12px] yoo-video-ml-[12px]">

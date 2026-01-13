@@ -53,7 +53,9 @@ const EmbedBlockOptions = ({ editor, block, props: embedProps }: Props) => {
               height={16}
               className="yoo-embed-w-4 yoo-embed-h-4 yoo-embed-mr-2"
             />
-            Alignment
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('editor.common.alignment')
+              : 'Alignment'}
           </button>
         </BlockOptionsMenuItem>
         <BlockOptionsMenuItem>
@@ -63,7 +65,9 @@ const EmbedBlockOptions = ({ editor, block, props: embedProps }: Props) => {
               height={16}
               className="yoo-embed-w-4 yoo-embed-h-4 yoo-embed-mr-2"
             />
-            Open
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('editor.common.open')
+              : 'Open'}
           </button>
         </BlockOptionsMenuItem>
       </BlockOptionsMenuGroup>

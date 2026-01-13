@@ -24,8 +24,8 @@ const TodoList = new YooptaPlugin<Pick<ListElementMap, 'todo-list'>>({
   },
   options: {
     display: {
-      title: 'Todo List',
-      description: 'Track tasks',
+      title: 'plugins.TodoList.display.title',
+      description: 'plugins.TodoList.display.description',
     },
     shortcuts: ['[]'],
   },

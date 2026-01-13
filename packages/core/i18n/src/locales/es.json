@@ -226,6 +226,9 @@
       "display": {
         "title": "Enlace",
         "description": "Crear enlace"
+      },
+      "actions": {
+        "edit": "Editar"
       }
     }
   },
@@ -238,7 +241,24 @@
       "code": "Código",
       "highlight": "Resaltar",
       "highlightColor": {
-        "text": "Color de resaltado"
+        "text": "Color de resaltado",
+        "tabs": {
+          "textColor": "Texto",
+          "background": "Fondo"
+        },
+        "colorPicker": "Selector de color",
+        "colors": {
+          "default": "Predeterminado",
+          "gray": "Gris",
+          "brown": "Marrón",
+          "orange": "Naranja",
+          "yellow": "Amarillo",
+          "green": "Verde",
+          "blue": "Azul",
+          "purple": "Morado",
+          "pink": "Rosa",
+          "red": "Rojo"
+        }
       },
       "link": "Enlace",
       "ariaLabels": {

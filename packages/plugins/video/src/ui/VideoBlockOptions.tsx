@@ -174,7 +174,9 @@ const VideoBlockOptions = ({ editor, block, props: videoProps }: Props) => {
                     height={16}
                     className="yoo-video-w-4 yoo-video-h-4 yoo-video-mr-2"
                   />
-                  Fit
+                  {'getLabelText' in editor
+                    ? (editor as any).getLabelText('plugins.Video.options.fit')
+                    : 'Fit'}
                 </span>
                 {videoProps?.fit === 'contain' && (
                   <CheckmarkIcon width={16} height={16} className="yoo-video-w-4 yoo-video-h-4" />
@@ -192,7 +194,9 @@ const VideoBlockOptions = ({ editor, block, props: videoProps }: Props) => {
                     height={16}
                     className="yoo-video-w-4 yoo-video-h-4 yoo-video-mr-2"
                   />
-                  Fill
+                  {'getLabelText' in editor
+                    ? (editor as any).getLabelText('plugins.Video.options.fill')
+                    : 'Fill'}
                 </span>
                 {videoProps?.fit === 'fill' && (
                   <CheckmarkIcon width={16} height={16} className="yoo-video-w-4 yoo-video-h-4" />
@@ -210,7 +214,9 @@ const VideoBlockOptions = ({ editor, block, props: videoProps }: Props) => {
                     height={16}
                     className="yoo-video-w-4 yoo-video-h-4 yoo-video-mr-2"
                   />
-                  Cover
+                  {'getLabelText' in editor
+                    ? (editor as any).getLabelText('plugins.Video.options.cover')
+                    : 'Cover'}
                 </span>
                 {videoProps?.fit === 'cover' && (
                   <CheckmarkIcon width={16} height={16} className="yoo-video-w-4 yoo-video-h-4" />
@@ -251,7 +257,9 @@ const VideoBlockOptions = ({ editor, block, props: videoProps }: Props) => {
                     className="yoo-video-w-4 yoo-video-h-4 yoo-video-mr-2"
                   />
                 )}
-                Replace video
+                {'getLabelText' in editor
+                  ? (editor as any).getLabelText('plugins.Video.labels.replaceVideo')
+                  : 'Replace video'}
               </label>
             </BlockOptionsMenuItem>
           </BlockOptionsMenuGroup>
@@ -287,7 +295,13 @@ const VideoBlockOptions = ({ editor, block, props: videoProps }: Props) => {
                   className="yoo-video-w-4 yoo-video-h-4 yoo-video-mr-2"
                 />
               )}
-              {videoProps?.poster ? 'Replace poster' : 'Add poster'}
+              {videoProps?.poster
+                ? ('getLabelText' in editor
+                    ? (editor as any).getLabelText('plugins.Video.labels.replacePoster')
+                    : 'Replace poster')
+                : ('getLabelText' in editor
+                    ? (editor as any).getLabelText('plugins.Video.labels.addPoster')
+                    : 'Add poster')}
             </label>
           </BlockOptionsMenuItem>
         )}
@@ -301,7 +315,9 @@ const VideoBlockOptions = ({ editor, block, props: videoProps }: Props) => {
               height={16}
               className="yoo-video-w-4 yoo-video-h-4 yoo-video-mr-2"
             />
-            Alignment
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('editor.common.alignment')
+              : 'Alignment'}
           </button>
         </BlockOptionsMenuItem>
         <BlockOptionsMenuItem>
@@ -316,7 +332,9 @@ const VideoBlockOptions = ({ editor, block, props: videoProps }: Props) => {
                   height={16}
                   className="yoo-embed-w-4 yoo-embed-h-4 yoo-embed-mr-2"
                 />
-                Open
+                {'getLabelText' in editor
+                  ? (editor as any).getLabelText('editor.common.open')
+                  : 'Open'}
               </>
             ) : (
               <>
@@ -325,7 +343,9 @@ const VideoBlockOptions = ({ editor, block, props: videoProps }: Props) => {
                   height={16}
                   className="yoo-video-w-4 yoo-video-h-4 yoo-video-mr-2"
                 />
-                Download
+                {'getLabelText' in editor
+                  ? (editor as any).getLabelText('editor.common.download')
+                  : 'Download'}
               </>
             )}
           </button>

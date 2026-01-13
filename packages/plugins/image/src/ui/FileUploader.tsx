@@ -67,7 +67,9 @@ const FileUploader = ({ accept = 'image/*', onClose, blockId, onSetLoading }: Pr
           onChange={onChange}
           multiple={false}
         />
-        Upload image
+        {'getLabelText' in editor
+          ? (editor as any).getLabelText('plugins.Image.actions.uploadImage')
+          : 'Upload image'}
       </label>
     </div>
   );

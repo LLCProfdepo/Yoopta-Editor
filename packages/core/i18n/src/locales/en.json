@@ -226,6 +226,9 @@
       "display": {
         "title": "Link",
         "description": "Create link"
+      },
+      "actions": {
+        "edit": "Edit"
       }
     }
   },
@@ -238,7 +241,24 @@
       "code": "Code",
       "highlight": "Highlight",
       "highlightColor": {
-        "text": "Highlight color"
+        "text": "Highlight color",
+        "tabs": {
+          "textColor": "Text",
+          "background": "Background"
+        },
+        "colorPicker": "Color Picker",
+        "colors": {
+          "default": "Default",
+          "gray": "Gray",
+          "brown": "Brown",
+          "orange": "Orange",
+          "yellow": "Yellow",
+          "green": "Green",
+          "blue": "Blue",
+          "purple": "Purple",
+          "pink": "Pink",
+          "red": "Red"
+        }
       },
       "link": "Link",
       "ariaLabels": {

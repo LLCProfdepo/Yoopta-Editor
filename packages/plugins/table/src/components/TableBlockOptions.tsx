@@ -45,7 +45,9 @@ const TableBlockOptions = ({ editor, block, table }: Props) => {
                 height={16}
                 className="yoo-table-w-4 yoo-table-h-4 yoo-table-mr-2"
               />
-              Header row
+              {'getLabelText' in editor
+                ? (editor as any).getLabelText('plugins.Table.labels.headerRow')
+                : 'Header row'}
             </span>
             {isHeaderRowEnabled && (
               <CheckIcon width={16} height={16} className="yoo-table-w-4 yoo-table-h-4" />
@@ -63,7 +65,9 @@ const TableBlockOptions = ({ editor, block, table }: Props) => {
                 height={16}
                 className="yoo-table-w-4 yoo-table-h-4 yoo-table-mr-2 yoo-table-rotate-180"
               />
-              Header column
+              {'getLabelText' in editor
+                ? (editor as any).getLabelText('plugins.Table.labels.headerColumn')
+                : 'Header column'}
             </span>
             {isHeaderColumnEnabled && (
               <CheckIcon width={16} height={16} className="yoo-table-w-4 yoo-table-h-4" />

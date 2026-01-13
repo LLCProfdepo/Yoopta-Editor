@@ -14,8 +14,8 @@ const Blockquote = new YooptaPlugin<Record<'blockquote', BlockquoteElement>>({
   },
   options: {
     display: {
-      title: 'Blockquote',
-      description: 'Capture quote',
+      title: 'plugins.Blockquote.display.title',
+      description: 'plugins.Blockquote.display.description',
     },
     shortcuts: ['>'],
   },

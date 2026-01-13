@@ -19,8 +19,8 @@ const Divider = new YooptaPlugin<DividerElementMap>({
   },
   options: {
     display: {
-      title: 'Divider',
-      description: 'Divide your blocks',
+      title: 'plugins.Divider.display.title',
+      description: 'plugins.Divider.display.description',
     },
     shortcuts: ['---', 'divider', 'line'],
   },

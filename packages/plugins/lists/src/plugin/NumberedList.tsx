@@ -24,8 +24,8 @@ const NumberedList = new YooptaPlugin<Pick<ListElementMap, 'numbered-list'>>({
   },
   options: {
     display: {
-      title: 'Numbered List',
-      description: 'Create list with numbering',
+      title: 'plugins.NumberedList.display.title',
+      description: 'plugins.NumberedList.display.description',
     },
     shortcuts: ['1.'],
   },

@@ -45,7 +45,9 @@ const DefaultLinkToolRender = (props: LinkToolRenderProps) => {
       {withTitle && (
         <div>
           <label htmlFor="title" className="yoopta-link-tool-label">
-            Link title
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('tools.linkTool.labels.linkTitle')
+              : 'Link title'}
           </label>
           <input
             id="title"
@@ -54,7 +56,7 @@ const DefaultLinkToolRender = (props: LinkToolRenderProps) => {
             name="title"
             value={link.title || ''}
             onChange={onChange}
-            placeholder="Edit link title"
+            placeholder={'getLabelText' in editor ? (editor as any).getLabelText('tools.linkTool.placeholders.editTitle') : 'Edit link title'}
             autoComplete="off"
           />
         </div>
@@ -62,7 +64,9 @@ const DefaultLinkToolRender = (props: LinkToolRenderProps) => {
       {withLink && (
         <div className={withTitle ? 'yoo-link-tool-mt-2' : ''}>
           <label htmlFor="url" className="yoopta-link-tool-label">
-            Link URL
+            {'getLabelText' in editor
+              ? (editor as any).getLabelText('tools.linkTool.labels.linkUrl')
+              : 'Link URL'}
           </label>
           <input
             id="url"
@@ -71,7 +75,7 @@ const DefaultLinkToolRender = (props: LinkToolRenderProps) => {
             name="url"
             value={link.url || ''}
             onChange={onChange}
-            placeholder="Edit link URL"
+            placeholder={'getLabelText' in editor ? (editor as any).getLabelText('tools.linkTool.placeholders.editUrl') : 'Edit link URL'}
             autoComplete="off"
           />
         </div>
@@ -80,7 +84,9 @@ const DefaultLinkToolRender = (props: LinkToolRenderProps) => {
         type="button"
         className="yoopta-button yoopta-link-tool-label !yoo-link-tool-font-[500] yoo-link-tool-mt-2 !yoo-link-tool-mb-0 !yoo-link-tool-flex yoo-link-tool-justify-between yoo-link-tool-items-center yoo-link-tool-w-full"
         onClick={() => setAdditionPropsOpen((p) => !p)}>
-        Additional props
+        {'getLabelText' in editor
+          ? (editor as any).getLabelText('tools.linkTool.labels.additionalProps')
+          : 'Additional props'}
         <ChevronUp
           style={{ transform: isAdditionalPropsOpen ? `rotate(180deg)` : `rotate(0deg)` }}
         />
@@ -89,7 +95,9 @@ const DefaultLinkToolRender = (props: LinkToolRenderProps) => {
         <>
           <div className="yoo-link-tool-mt-2">
             <label htmlFor="target" className="yoopta-link-tool-label">
-              Link target
+              {'getLabelText' in editor
+                ? (editor as any).getLabelText('tools.linkTool.labels.linkTarget')
+                : 'Link target'}
             </label>
             <input
               id="target"
@@ -98,13 +106,15 @@ const DefaultLinkToolRender = (props: LinkToolRenderProps) => {
               name="target"
               value={link.target}
               onChange={onChange}
-              placeholder="Edit link target"
+              placeholder={'getLabelText' in editor ? (editor as any).getLabelText('tools.linkTool.placeholders.editTarget') : 'Edit link target'}
               autoComplete="off"
             />
           </div>
           <div className="yoo-link-tool-mt-2">
             <label htmlFor="rel" className="yoopta-link-tool-label">
-              Link rel
+              {'getLabelText' in editor
+                ? (editor as any).getLabelText('tools.linkTool.labels.linkRel')
+                : 'Link rel'}
             </label>
             <input
               id="rel"
@@ -113,7 +123,7 @@ const DefaultLinkToolRender = (props: LinkToolRenderProps) => {
               name="rel"
               value={link.rel}
               onChange={onChange}
-              placeholder="Edit link rel"
+              placeholder={'getLabelText' in editor ? (editor as any).getLabelText('tools.linkTool.placeholders.editRel') : 'Edit link rel'}
               autoComplete="off"
             />
           </div>
@@ -125,13 +135,21 @@ const DefaultLinkToolRender = (props: LinkToolRenderProps) => {
           className="yoopta-button yoo-link-tool-bg-[#1183ff] yoo-link-tool-text-[#fff] yoo-link-tool-text-sm yoo-link-tool-font-medium yoo-link-tool-py-[5px] yoo-link-tool-px-[10px] yoo-link-tool-rounded-md yoo-link-tool-shadow-sm disabled:yoo-link-tool-opacity-50"
           disabled={!link.url}
           onClick={onSave}>
-          {props.link.url ? 'Update' : 'Add'}
+          {props.link.url
+            ? ('getLabelText' in editor
+                ? (editor as any).getLabelText('tools.linkTool.actions.update')
+                : 'Update')
+            : ('getLabelText' in editor
+                ? (editor as any).getLabelText('tools.linkTool.actions.add')
+                : 'Add')}
         </button>
         <button
           type="button"
           className="yoopta-button yoo-link-tool-ml-2 yoo-link-tool-bg-[#f4f4f5] yoo-link-tool-text-[#000] yoo-link-tool-text-sm yoo-link-tool-font-medium yoo-link-tool-py-[5px] yoo-link-tool-px-[10px] yoo-link-tool-rounded-md yoo-link-tool-shadow-sm disabled:yoo-link-tool-opacity-50"
           onClick={onDelete}>
-          Delete link
+          {'getLabelText' in editor
+            ? (editor as any).getLabelText('tools.linkTool.actions.delete')
+            : 'Delete link'}
         </button>
       </div>
     </div>

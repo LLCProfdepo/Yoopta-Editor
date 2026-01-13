@@ -42,8 +42,8 @@ const HeadingThree = new YooptaPlugin<Record<'heading-three', HeadingThreeElemen
   commands: HeadingThreeCommands,
   options: {
     display: {
-      title: 'Heading 3',
-      description: 'Small section heading',
+      title: 'plugins.HeadingThree.display.title',
+      description: 'plugins.HeadingThree.display.description',
     },
     shortcuts: ['h3', '###'],
   },

@@ -22,8 +22,8 @@ const BulletedList = new YooptaPlugin<Pick<ListElementMap, 'bulleted-list'>>({
   },
   options: {
     display: {
-      title: 'Bulleted List',
-      description: 'Create bullet list',
+      title: 'plugins.BulletedList.display.title',
+      description: 'plugins.BulletedList.display.description',
     },
     shortcuts: ['-'],
   },

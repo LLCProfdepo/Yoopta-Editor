@@ -45,7 +45,9 @@ const DividerBlockOptions = ({ editor, block, props: dividerProps }: Props) => {
                 height={16}
                 className="yoo-divider-w-4 yoo-divider-h-4 yoo-divider-mr-2"
               />
-              Line
+              {'getLabelText' in editor
+                ? (editor as any).getLabelText('plugins.Divider.options.line')
+                : 'Line'}
             </span>
             {isActiveTheme('solid') && (
               <CheckmarkIcon
@@ -69,7 +71,9 @@ const DividerBlockOptions = ({ editor, block, props: dividerProps }: Props) => {
                 color="tranparent"
                 className="yoo-divider-w-4 yoo-divider-h-4 yoo-divider-mr-2"
               />
-              Dashed
+              {'getLabelText' in editor
+                ? (editor as any).getLabelText('plugins.Divider.options.dashed')
+                : 'Dashed'}
             </span>
             {isActiveTheme('dashed') && (
               <CheckmarkIcon
@@ -92,7 +96,9 @@ const DividerBlockOptions = ({ editor, block, props: dividerProps }: Props) => {
                 height={16}
                 className="yoo-divider-w-4 yoo-divider-h-4 yoo-divider-mr-2"
               />
-              Dots
+              {'getLabelText' in editor
+                ? (editor as any).getLabelText('plugins.Divider.options.dots')
+                : 'Dots'}
             </span>
             {isActiveTheme('dotted') && (
               <CheckmarkIcon
@@ -116,7 +122,9 @@ const DividerBlockOptions = ({ editor, block, props: dividerProps }: Props) => {
                 className="yoo-divider-w-4 yoo-divider-h-4 yoo-divider-mr-2"
                 color={dividerProps?.color || '#EFEFEE'}
               />
-              Gradient
+              {'getLabelText' in editor
+                ? (editor as any).getLabelText('plugins.Divider.options.gradient')
+                : 'Gradient'}
             </span>
             {isActiveTheme('gradient') && (
               <CheckmarkIcon

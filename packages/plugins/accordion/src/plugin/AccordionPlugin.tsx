@@ -147,8 +147,8 @@ const Accordion = new YooptaPlugin<AccordionElementMap>({
   extensions: withAccordion,
   options: {
     display: {
-      title: 'Accordion',
-      description: 'Create collapses',
+      title: 'plugins.Accordion.display.title',
+      description: 'plugins.Accordion.display.description',
       icon: <ListCollapse size={24} />,
     },
     shortcuts: ['accordion'],

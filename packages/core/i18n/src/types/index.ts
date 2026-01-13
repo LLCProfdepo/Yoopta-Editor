@@ -59,6 +59,23 @@ export type TranslationDictionary = {
       highlight: string;
       highlightColor: {
         text: string;
+        tabs: {
+          textColor: string;
+          background: string;
+        };
+        colorPicker: string;
+        colors: {
+          default: string;
+          gray: string;
+          brown: string;
+          orange: string;
+          yellow: string;
+          green: string;
+          blue: string;
+          purple: string;
+          pink: string;
+          red: string;
+        };
       };
       link: string;
       ariaLabels: {

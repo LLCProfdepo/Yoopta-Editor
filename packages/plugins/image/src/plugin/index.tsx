@@ -38,8 +38,8 @@ const Image = new YooptaPlugin<ImageElementMap, ImagePluginOptions>({
   commands: ImageCommands,
   options: {
     display: {
-      title: 'Image',
-      description: 'Upload from device or insert with link',
+      title: 'plugins.Image.display.title',
+      description: 'plugins.Image.display.description',
     },
     onUpload: () => Promise.resolve({ src: null, alt: null }),
     accept: 'image/png, image/jpeg, image/gif, image/webp',

@@ -54,7 +54,9 @@ const CalloutBlockOptions = ({ editor, block, props: calloutProps }: Props) => {
                 color={CALLOUT_THEME_STYLES.default.color}
                 className="yoo-callout-w-4 yoo-callout-h-4 yoo-callout-mr-2"
               />
-              Default
+              {'getLabelText' in editor
+                ? (editor as any).getLabelText('plugins.Callout.themes.default')
+                : 'Default'}
             </span>
             {isActiveTheme('default') && (
               <CheckmarkIcon
@@ -83,7 +85,9 @@ const CalloutBlockOptions = ({ editor, block, props: calloutProps }: Props) => {
                 color={CALLOUT_THEME_STYLES.info.color}
                 className="yoo-callout-w-4 yoo-callout-h-4 yoo-callout-mr-2"
               />
-              Info
+              {'getLabelText' in editor
+                ? (editor as any).getLabelText('plugins.Callout.themes.info')
+                : 'Info'}
             </span>
             {isActiveTheme('info') && (
               <CheckmarkIcon
@@ -112,7 +116,9 @@ const CalloutBlockOptions = ({ editor, block, props: calloutProps }: Props) => {
                 color={CALLOUT_THEME_STYLES.success.color}
                 className="yoo-callout-w-4 yoo-callout-h-4 yoo-callout-mr-2"
               />
-              Success
+              {'getLabelText' in editor
+                ? (editor as any).getLabelText('plugins.Callout.themes.success')
+                : 'Success'}
             </span>
             {isActiveTheme('success') && (
               <CheckmarkIcon
@@ -141,7 +147,9 @@ const CalloutBlockOptions = ({ editor, block, props: calloutProps }: Props) => {
                 color={CALLOUT_THEME_STYLES.warning.color}
                 className="yoo-callout-w-4 yoo-callout-h-4 yoo-callout-mr-2"
               />
-              Warning
+              {'getLabelText' in editor
+                ? (editor as any).getLabelText('plugins.Callout.themes.warning')
+                : 'Warning'}
             </span>
             {isActiveTheme('warning') && (
               <CheckmarkIcon
@@ -170,7 +178,9 @@ const CalloutBlockOptions = ({ editor, block, props: calloutProps }: Props) => {
                 color={CALLOUT_THEME_STYLES.error.color}
                 className="yoo-callout-w-4 yoo-callout-h-4 yoo-callout-mr-2"
               />
-              Error
+              {'getLabelText' in editor
+                ? (editor as any).getLabelText('plugins.Callout.themes.error')
+                : 'Error'}
             </span>
             {isActiveTheme('error') && (
               <CheckmarkIcon

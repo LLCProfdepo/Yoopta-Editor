@@ -42,8 +42,8 @@ const Video = new YooptaPlugin<VideoElementMap, VideoPluginOptions>({
     maxSizes: { maxWidth: 650, maxHeight: 550 },
     onUpload: async () => Promise.resolve({ src: '' }),
     display: {
-      title: 'Video',
-      description: 'Upload from device, insert from Youtube, Vimeo, DailyMotion, Loom, Wistia',
+      title: 'plugins.Video.display.title',
+      description: 'plugins.Video.display.description',
     },
   },
   commands: VideoCommands,

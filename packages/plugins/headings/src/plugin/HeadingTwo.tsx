@@ -42,8 +42,8 @@ const HeadingTwo = new YooptaPlugin<Record<'heading-two', HeadingTwoElement>>({
   commands: HeadingTwoCommands,
   options: {
     display: {
-      title: 'Heading 2',
-      description: 'Medium section heading',
+      title: 'plugins.HeadingTwo.display.title',
+      description: 'plugins.HeadingTwo.display.description',
     },
     shortcuts: ['h2', '##'],
   },
