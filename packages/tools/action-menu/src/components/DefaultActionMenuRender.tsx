@@ -52,8 +52,16 @@ const DefaultActionMenuRender = ({
 
             if (!block) return null;
 
-            const title = block.options?.display?.title || block.type;
-            const description = block.options?.display?.description || '';
+            const titleKey = block.options?.display?.title || block.type;
+            const descriptionKey = block.options?.display?.description || '';
+
+            // Resolve i18n keys if editor has getLabelText method
+            const title = 'getLabelText' in editor
+              ? (editor as any).getLabelText(titleKey)
+              : titleKey;
+            const description = descriptionKey && 'getLabelText' in editor
+              ? (editor as any).getLabelText(descriptionKey)
+              : descriptionKey;
             const Icon = action.icon || DEFAULT_ICONS_MAP[action.type];
 
             return (
