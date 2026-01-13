@@ -31,8 +31,7 @@
     "prettier:packages": "yarn lerna run prettier --parallel",
     "format": "yarn prettier && yarn prettier:packages",
     "release": "yarn clean && yarn build && yarn lerna publish --no-private",
-    "release:local": "node scripts/release-local.js",
-    "prepare": "husky"
+    "release:local": "node scripts/release-local.js"
   },
   "lint-staged": {
     "packages/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
