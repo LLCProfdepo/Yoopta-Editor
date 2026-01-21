@@ -1,4 +1,4 @@
-import type { CSSProperties, MouseEvent} from 'react';
+import type { CSSProperties, MouseEvent } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { autoUpdate, flip, inline, offset, shift, useFloating } from '@floating-ui/react';
 import {
@@ -14,18 +14,16 @@ import {
   UnderlineIcon,
 } from '@radix-ui/react-icons';
 import * as Toolbar from '@radix-ui/react-toolbar';
-import type {
-  SlateElement,
-  YooptaBlockData} from '@yoopta/editor';
+import type { SlateElement, YooptaBlockData } from '@yoopta/editor';
 import {
   Blocks,
   HOTKEYS,
   UI,
   findPluginBlockByPath,
   findSlateBySelectionPath,
-  useYooptaTools
+  useYooptaTools,
 } from '@yoopta/editor';
-import type { NodeEntry, Range} from 'slate';
+import type { NodeEntry, Range } from 'slate';
 import { Editor, Element, Transforms } from 'slate';
 
 import { HighlightColor } from './HighlightColor';
@@ -123,7 +121,11 @@ const DefaultToolbarRender = ({ activeBlock, editor, toggleHoldToolbar }: Toolba
     };
   };
 
-  const blockLabel = activeBlock?.options?.display?.title || activeBlock?.type || '';
+  const blockLabel =
+    (activeBlock?.options?.display?.title &&
+      (editor as any).getLabelText(activeBlock.options.display.title)) ||
+    activeBlock?.type ||
+    '';
 
   const ActionMenu = tools.ActionMenu;
   const LinkTool = tools.LinkTool;
@@ -133,7 +135,6 @@ const DefaultToolbarRender = ({ activeBlock, editor, toggleHoldToolbar }: Toolba
       if (HOTKEYS.isEscape(e)) {
         setModals(DEFAULT_MODALS);
         toggleHoldToolbar?.(false);
-        
       }
 
       // [TODO]: Implement this accessibility feature
@@ -266,7 +267,11 @@ const DefaultToolbarRender = ({ activeBlock, editor, toggleHoldToolbar }: Toolba
       <Toolbar.ToggleGroup
         className="yoopta-toolbar-group"
         type="single"
-        aria-label={'getLabelText' in editor ? (editor as any).getLabelText('tools.toolbar.ariaLabels.blockFormatting') : 'Block formatting'}>
+        aria-label={
+          'getLabelText' in editor
+            ? (editor as any).getLabelText('tools.toolbar.ariaLabels.blockFormatting')
+            : 'Block formatting'
+        }>
         <Toolbar.ToggleItem
           className="yoopta-button yoopta-toolbar-item"
           value={blockLabel}
@@ -291,18 +296,28 @@ const DefaultToolbarRender = ({ activeBlock, editor, toggleHoldToolbar }: Toolba
       <Toolbar.ToggleGroup
         className="yoopta-toolbar-group"
         type="single"
-        aria-label={'getLabelText' in editor ? (editor as any).getLabelText('tools.toolbar.ariaLabels.blockFormatting') : 'Block formatting'}>
+        aria-label={
+          'getLabelText' in editor
+            ? (editor as any).getLabelText('tools.toolbar.ariaLabels.blockFormatting')
+            : 'Block formatting'
+        }>
         <Toolbar.ToggleItem
           className="yoopta-button yoopta-toolbar-item"
           value="LinkTool"
-          aria-label={'getLabelText' in editor ? (editor as any).getLabelText('tools.toolbar.ariaLabels.linkTool') : 'LinkTool'}
+          aria-label={
+            'getLabelText' in editor
+              ? (editor as any).getLabelText('tools.toolbar.ariaLabels.linkTool')
+              : 'LinkTool'
+          }
           ref={linkToolRefs.setReference}
           onClick={() => {
             onChangeModal('link', !modals.link);
             toggleHoldToolbar?.(true);
           }}
           style={getModalTriggerStyle('link')}>
-          <span className="yoo-toolbar-mr-0">{'getLabelText' in editor ? (editor as any).getLabelText('tools.toolbar.link') : 'Link'}</span>
+          <span className="yoo-toolbar-mr-0">
+            {'getLabelText' in editor ? (editor as any).getLabelText('tools.toolbar.link') : 'Link'}
+          </span>
           {modals.link && !!LinkTool && (
             <Portal id="yoo-link-tool-portal">
               <Overlay lockScroll className="z-[100]" onClick={onClickLinkOverlay}>
@@ -318,12 +333,20 @@ const DefaultToolbarRender = ({ activeBlock, editor, toggleHoldToolbar }: Toolba
       <Toolbar.ToggleGroup
         className="yoopta-toolbar-group"
         type="multiple"
-        aria-label={'getLabelText' in editor ? (editor as any).getLabelText('tools.toolbar.ariaLabels.textFormatting') : 'Text formatting'}>
+        aria-label={
+          'getLabelText' in editor
+            ? (editor as any).getLabelText('tools.toolbar.ariaLabels.textFormatting')
+            : 'Text formatting'
+        }>
         {editor.formats.bold && (
           <Toolbar.ToggleItem
             className="yoopta-button yoopta-toolbar-item-mark"
             value="bold"
-            aria-label={'getLabelText' in editor ? (editor as any).getLabelText('tools.toolbar.ariaLabels.bold') : 'Bold'}
+            aria-label={
+              'getLabelText' in editor
+                ? (editor as any).getLabelText('tools.toolbar.ariaLabels.bold')
+                : 'Bold'
+            }
             style={getItemStyle('bold')}
             onClick={() => onToggleMark('bold')}>
             <FontBoldIcon width={20} height={20} />
@@ -333,7 +356,11 @@ const DefaultToolbarRender = ({ activeBlock, editor, toggleHoldToolbar }: Toolba
           <Toolbar.ToggleItem
             className="yoopta-button yoopta-toolbar-item-mark"
             value="italic"
-            aria-label={'getLabelText' in editor ? (editor as any).getLabelText('tools.toolbar.ariaLabels.italic') : 'Italic'}
+            aria-label={
+              'getLabelText' in editor
+                ? (editor as any).getLabelText('tools.toolbar.ariaLabels.italic')
+                : 'Italic'
+            }
             style={getItemStyle('italic')}
             onClick={() => onToggleMark('italic')}>
             <FontItalicIcon width={20} height={20} />
@@ -343,7 +370,11 @@ const DefaultToolbarRender = ({ activeBlock, editor, toggleHoldToolbar }: Toolba
           <Toolbar.ToggleItem
             className="yoopta-button yoopta-toolbar-item-mark"
             value="underline"
-            aria-label={'getLabelText' in editor ? (editor as any).getLabelText('tools.toolbar.ariaLabels.underline') : 'Underline'}
+            aria-label={
+              'getLabelText' in editor
+                ? (editor as any).getLabelText('tools.toolbar.ariaLabels.underline')
+                : 'Underline'
+            }
             style={getItemStyle('underline')}
             onClick={() => onToggleMark('underline')}>
             <UnderlineIcon width={20} height={20} />
@@ -354,7 +385,11 @@ const DefaultToolbarRender = ({ activeBlock, editor, toggleHoldToolbar }: Toolba
           <Toolbar.ToggleItem
             className="yoopta-button yoopta-toolbar-item-mark"
             value="strike"
-            aria-label={'getLabelText' in editor ? (editor as any).getLabelText('tools.toolbar.ariaLabels.strike') : 'Strike'}
+            aria-label={
+              'getLabelText' in editor
+                ? (editor as any).getLabelText('tools.toolbar.ariaLabels.strike')
+                : 'Strike'
+            }
             style={getItemStyle('strike')}
             onClick={() => onToggleMark('strike')}>
             <StrikethroughIcon width={20} height={20} />
@@ -364,7 +399,11 @@ const DefaultToolbarRender = ({ activeBlock, editor, toggleHoldToolbar }: Toolba
           <Toolbar.ToggleItem
             className="yoopta-button yoopta-toolbar-item-mark"
             value="code"
-            aria-label={'getLabelText' in editor ? (editor as any).getLabelText('tools.toolbar.ariaLabels.code') : 'Code'}
+            aria-label={
+              'getLabelText' in editor
+                ? (editor as any).getLabelText('tools.toolbar.ariaLabels.code')
+                : 'Code'
+            }
             style={getItemStyle('code')}
             onClick={() => onToggleMark('code')}>
             <CodeIcon width={20} height={20} />
@@ -375,11 +414,19 @@ const DefaultToolbarRender = ({ activeBlock, editor, toggleHoldToolbar }: Toolba
       <Toolbar.ToggleGroup
         className="yoopta-toolbar-group"
         type="multiple"
-        aria-label={'getLabelText' in editor ? (editor as any).getLabelText('tools.toolbar.ariaLabels.textFormatting') : 'Text formatting'}>
+        aria-label={
+          'getLabelText' in editor
+            ? (editor as any).getLabelText('tools.toolbar.ariaLabels.textFormatting')
+            : 'Text formatting'
+        }>
         <Toolbar.ToggleItem
           className="yoopta-button yoopta-toolbar-item-mark"
           value="align"
-          aria-label={'getLabelText' in editor ? (editor as any).getLabelText('tools.toolbar.ariaLabels.alignment') : 'Alignment'}
+          aria-label={
+            'getLabelText' in editor
+              ? (editor as any).getLabelText('tools.toolbar.ariaLabels.alignment')
+              : 'Alignment'
+          }
           style={getItemStyle('align')}
           onClick={onToggleAlign}>
           <AlignIcon width={20} height={20} />
@@ -399,7 +446,11 @@ const DefaultToolbarRender = ({ activeBlock, editor, toggleHoldToolbar }: Toolba
             <Toolbar.ToggleItem
               className="yoopta-button yoopta-toolbar-item-mark"
               value="highlight"
-              aria-label={'getLabelText' in editor ? (editor as any).getLabelText('tools.toolbar.ariaLabels.highlight') : 'Highlight'}
+              aria-label={
+                'getLabelText' in editor
+                  ? (editor as any).getLabelText('tools.toolbar.ariaLabels.highlight')
+                  : 'Highlight'
+              }
               style={getHighlightTriggerStyle()}
               ref={highlightPickerRefs.setReference}
               onClick={() => onChangeModal('highlight', !modals.highlight)}>
