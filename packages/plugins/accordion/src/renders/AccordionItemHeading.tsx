@@ -1,12 +1,6 @@
 import type { MouseEvent } from 'react';
-import type {
-  PluginElementRenderProps} from '@yoopta/editor';
-import {
-  Blocks,
-  Elements,
-  useYooptaEditor,
-  useYooptaReadOnly,
-} from '@yoopta/editor';
+import type { PluginElementRenderProps } from '@yoopta/editor';
+import { Blocks, Elements, useYooptaEditor, useYooptaReadOnly } from '@yoopta/editor';
 import { ChevronUp, Plus, TrashIcon } from 'lucide-react';
 import { Path } from 'slate';
 
@@ -94,14 +88,14 @@ export const AccordionItemHeading = ({ extendRender, ...props }: PluginElementRe
               contentEditable={false}
               onClick={onDeleteAccordionItem}
               className="yoopta-button yoo-accordion-opacity-0 group-hover:yoo-accordion-opacity-100 yoo-accordion-transition-opacity">
-              <TrashIcon strokeWidth={1} size={16} color="#000" />
+              <TrashIcon strokeWidth={1} size={16} color="currentColor" />
             </button>
             <button
               type="button"
               contentEditable={false}
               onClick={onAddAccordionItem}
               className="yoopta-button yoo-accordion-mr-2 yoo-accordion-opacity-0 group-hover:yoo-accordion-opacity-100 yoo-accordion-transition-opacity">
-              <Plus strokeWidth={1} size={20} color="#000" />
+              <Plus strokeWidth={1} size={20} color="currentColor" />
             </button>
           </>
         )}
@@ -113,7 +107,7 @@ export const AccordionItemHeading = ({ extendRender, ...props }: PluginElementRe
           <ChevronUp
             strokeWidth={1}
             size={20}
-            color="#000"
+            color="currentColor"
             style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
             className="yoo-accordion-transition-transform yoo-accordion-duration-200"
           />
